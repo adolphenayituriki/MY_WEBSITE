@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Services</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="../css/service.css">
+</head>
+
+<header>
+      <img src="adolphe.webp" alt=""> <button onclick="document.getElementById('scloll').scrollIntoView({ behavior: 'smooth' })">Visit us</button>
+
+      <nav id="nav-links" class="navigation">
+            <ul>
+                  <li><i class="fa-solid fa-house"></i><a href="../index.html">Home</a></li>
+                  <li><a href="#">Service</a></li>
+                  <li><a href="../html/project.html">Project</a></li>
+                  <li><a href="../html/contact.html">Contact</a></li>
+            </ul>
+      </nav>
+</header>
+<body>
+      <section id="service">
+            <h2>Welcome to our services</h2>
+            <select class="option" id="option">
+                  <option value="text" style="text-align: center; color: rgb(154, 146, 146);">Search service......</option>
+                  <option value="text" id="online" onclick="displayService()">Online marketing</option>
+                  <option value="text">Web Design</option>
+                  <option value="text">ICT Training and computer maintenance</option>
+                  <option value="text">Photos and Video Editing (Shooting)</option>
+            </select>
+            <button type="submit" onclick="displayService()">Submit</button>
+      </section>
+      <section id="afterSubmit"></section>
+
+      <footer>
+            <fieldset>
+                  <legend style="color: blanchedalmond;">Wish to Contact us?</legend>
+                  <input type="radio" value="Yes" id="radio1" onclick="disableOther('radio2'), Window.alert('Thank you')">
+                  <label for="radio1" style="color: aquamarine;">Yes</label>
+                  <input type="radio" value="No" id="radio2" onclick="disableOther('radio1'), Window.alert('Thank you')">
+                  <label for="radio2" style="color: bisque;">No</label>
+            </fieldset>
+            <form id="formId">
+                  <p id="formFill" class="fillNow"></p>
+                  </i><label for="names">Names:</label>
+                  <i class="fa-solid fa-address-card" id="icon"></i><input type="text" placeholder="Your names"z><br>
+                  <label for="email required">Email:</label>
+                  <i class="fa-regular fa-envelope" id="icon"></i><input type="email" placeholder="E-mail: i.e example@gmail.com" id="email"><br>
+                  <label for="message">Message:</label>
+                  <i class="fa-regular fa-message" id="icon"></i><textarea name="text" id="message" placeholder="Text your message" ></textarea><br>
+                  <button type="submit" onclick="send()">Send</button>
+            </form>
+            <div class="contacts">
+                  <i class="fa-brands fa-square-whatsapp" style="color: green;"></i><label for="link">+250 780505948 View <a href="https://Whatsapp.me/+250 780505948" style="color: green;">On Whatsapp</a></label>
+            </div>
+
+<section class="lastContent" id="scloll">
+            <div id="contentBox" class="fade-in" style="font-size: 20px;">Ready to know more 👋</div>
+<br>
+<button class="button" onclick="changeContent()">VIEW</button>
+</section>
+      </footer>
+</body>
+<script src="../js/service.js"></script>
+</html>

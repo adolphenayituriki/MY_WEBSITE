@@ -1,0 +1,151 @@
+body {
+      background-color: #edeeef;
+      color: #333;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header img {
+      max-width: 120px;
+      height: auto;
+}
+
+    /* Navbar brand style */
+.navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #007bff;
+}
+.collapse{
+      background-color: rgb(8, 65, 8);
+}
+
+.navbar-nav .nav-link {
+      font-weight: 500;
+      color: white;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+      color: #007bff;}
+
+section#page2 {
+      padding: 3rem 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgb(0 0 0 / 0.1);
+      margin-bottom: 3rem;
+      text-align: center;
+}
+
+section#page2 h2 {
+      font-size: 2.25rem;
+      margin-bottom: 0.75rem;
+}
+
+section#page2 h3 {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+}
+
+section#page2 h4 {
+      color: #666;
+      margin-bottom: 1rem;}
+
+#contentBox .contentBox {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
+      margin-bottom: 1.5rem;
+      min-height: 180px;
+}
+
+#contentBox h5 {
+      color: #007bff;
+      margin-bottom: 1rem;
+      font-weight: 600;
+}
+
+#contentBox p {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;}
+
+footer {
+      background: #222;
+      color: #eee;
+      padding: 2rem 1rem;
+      border-radius: 8px;
+      margin-top: 3rem;
+}
+
+footer fieldset {
+      border: none;
+      margin-bottom: 1.5rem;
+}
+
+footer legend {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+}
+
+footer label {
+      margin-right: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+}
+
+footer input[type="radio"] {
+      margin-right: 0.3rem;
+}
+
+footer form label {
+      font-weight: 600;
+}
+
+footer form input,
+footer form textarea {
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding: 0.5rem 0.75rem;
+      width: 100%;
+      resize: vertical;
+}
+
+footer form input:focus,
+footer form textarea:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+footer form .input-group-text {
+      background: transparent;
+      border: none;
+      color: #007bff;
+}
+
+.footerContacts a {
+      font-size: 1.8rem;
+      margin: 0 0.7rem;
+      color: #eee;
+      transition: color 0.3s ease;
+}
+
+.footerContacts a:hover {
+      color: #007bff;
+}
+
+.btn-custom {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 0.5rem 1.25rem;
+      font-weight: 600;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+      background-color: #0056b3;
+      color: white;
+}
