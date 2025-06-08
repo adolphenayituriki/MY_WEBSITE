@@ -54,3 +54,26 @@ With our Web Design service, you can expect professional layouts, optimized perf
             displaySection.innerHTML = 'Please select a service first.';
         }
     }
+
+    function changeContent() {
+      const box = document.getElementById("contentBox");
+
+      // Fade and slide out
+      box.classList.remove("fade-in");
+      box.classList.add("fade-out");
+
+      // After fade out, change text
+      setTimeout(() => {
+      box.innerHTML = "Am Adolphe Nayituriki. <br> should you Find me on youtube channel called RELAX MEDIA 🎉 <br> <a href='http://www.youtube.com/@Relax-words03' style='color: rgb(239, 148, 38); text-decoration: none;''>FOLLOW NOW</a> <button onclick='contentBack()'>cancel</button></button>";
+
+        // Fade and slide in with bounce
+      box.classList.remove("fade-out");
+      box.classList.add("fade-in", "animate__animated", "animate__bounceIn");
+
+        // Clean up animation class after it plays
+      setTimeout(() => {
+      box.classList.remove("animate__animated", "animate__bounceIn");
+      }, 1000);
+      }, 500);
+
+}
