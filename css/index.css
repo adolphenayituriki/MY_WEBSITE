@@ -88,6 +88,22 @@ section.more{
       font-size: 1rem;
       margin-bottom: 0.4rem;}
 
+#hobbies{
+      background-color: #cedeef;
+      font-weight: bold;
+      border-radius: 5px;
+}
+.hobbies{
+      background-color: yellow;
+      border-radius: 5px;
+      box-shadow: 2px 5px rgb(9, 88, 206);
+}
+#Day_Activities{
+      background-color: #f6f8fb;
+      margin-top: 30px;
+}
+
+
 footer {
       background: #222;
       color: #eee;

@@ -75,5 +75,4 @@ With our Web Design service, you can expect professional layouts, optimized perf
       box.classList.remove("animate__animated", "animate__bounceIn");
       }, 1000);
       }, 500);
-
 }
