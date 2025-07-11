@@ -1,12 +1,8 @@
-body {
-      background-color: #edeeef;
-      color: #333;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
 header img {
       max-width: 120px;
       height: auto;
 }
+
     /* Navbar brand style */
 .navbar-brand {
       font-weight: 700;
@@ -30,80 +26,64 @@ header img {
 .navbar-nav .nav-link.active {
       color: #007bff;}
 
-section#page2 {
-      padding: 3rem 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgb(0 0 0 / 0.1);
-      margin-bottom: 3rem;
+
+#service {
+      background-image: url(../images/concept-of-ict-with-connected-icons-2HJBGD3.jpg);
+      background-size: cover; /* Show full image */
+      background-position: center;
+      background-color: #2f2d2d;
+      color: #fff;
+      padding: 20px;
       text-align: center;
 }
 
-section#page2 h2 {
-      font-size: 2.25rem;
-      margin-bottom: 0.75rem;
-}
-section#page2 p {
-      color: #007bff;
-}
-section#page2 img {
-      width: 150px;
-      border-radius: 50%;
-      height: 150px;
-      object-fit: cover;
-      border: 2px solid #ccc;
-      box-shadow: 0px 5px blue;
-}
-
-section#page2 h3 {
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-}
-
-section#page2 h4 {
-      color: #666;
-      margin-bottom: 1rem;}
-section.more{
-      background-color: #007bff;
+h2 {
+      font-size: 35px;
       text-align: center;
-      color: wheat;
+      background: linear-gradient(to right, #0e5bae, #056729);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+
+.option {
+      max-width: 400px;
       border-radius: 5px;
-}
-#contentBox .contentBox {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
-      margin-bottom: 1.5rem;
-      min-height: 180px;
-}
-
-#contentBox h5 {
-      color: #007bff;
-      margin-bottom: 1rem;
-      font-weight: 600;
+      width: 80%;
+      margin: 10px auto;
+      height: 45px;
+      font-size: 18px;
+      border: 2px solid rgb(10, 106, 123);
+      color: #019870;
+      cursor: pointer;
 }
 
-#contentBox p {
-      font-size: 1rem;
-      margin-bottom: 0.4rem;}
-
-#hobbies{
-      background-color: #cedeef;
+button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
       font-weight: bold;
-      border-radius: 5px;
-}
-.hobbies{
-      background-color: yellow;
-      border-radius: 5px;
-      box-shadow: 2px 5px rgb(9, 88, 206);
-}
-#Day_Activities{
-      background-color: #f6f8fb;
-      margin-top: 30px;
+      background-color: #019870;
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
 }
 
+button:hover {
+      background-color: #017a60;
+}
 
+#afterSubmit {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #0d5572;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            max-width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            border-radius: 5px;
+}
 footer {
       background: #222;
       color: #eee;
@@ -184,3 +164,27 @@ footer form .input-group-text {
       background-color: #0056b3;
       color: white;
 }
+
+.contact-header {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+      text-align: center;
+    }
+    .contact-header h1 {
+      font-size: 2.5rem;
+      color: #098393;
+    }
+    .contact-info {
+      padding: 30px 0;
+    }
+    .contact-info p {
+      font-size: 18px;
+    }
+    .social-links a {
+      margin: 0 10px;
+      font-size: 24px;
+    }
+    footer {
+      padding: 40px 20px;
+      background-color: #f0f0f0;
+    }

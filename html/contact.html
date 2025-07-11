@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Home</title>
+      <title>Adolphe's services</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel="stylesheet" href="/css/contact.css">
+      <link rel="stylesheet" href="../css/service.css">
 </head>
 
 <body>
@@ -22,97 +21,85 @@
       <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/index.html"><i class="fa-solid fa-house"></i> Home</a>
+                  <a class="nav-link" href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
             </li>
             <li class="nav-item">
-                  <a class="nav-link" href="/html/service.html">Service</a>
+                  <a class="nav-link active" aria-current="page" href="../html/service.html"></i> Service</a>
             </li>
             <li class="nav-item">
                   <a class="nav-link" href="/Computer support/index.html" target="_blank">Project</a>
             </li>
             <li class="nav-item">
-                  <a class="nav-link" href="/html/moreAboutMe.html">More_About_me?</a>
+                  <a class="nav-link" href="./moreAboutMe.html">More_About_me?</a>
             </li>
             <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
+                  <a class="nav-link" href="./contact.html">Contact</a>
             </li>
             </ul>
       </div>
       </div>
       </nav>
-
+<h1>Can you contact me!</h1>
 <!-- Header with image and Visit button -->
-      <header class="container d-flex flex-column flex-md-row align-items-center justify-content-between my-4 gap-3">
-            <img src="/images/adolphe.webp" alt="Profile picture" class="rounded-circle" />
-            <button class="btn btn-custom" onclick="document.getElementById('scloll').scrollIntoView({ behavior: 'smooth' })">Visit us</button>
-      </header>
+      <section class="container contact-info">
+  <div class="row text-center">
+    <div class="col-md-4">
+      <i class="fa-solid fa-phone fa-2x text-success"></i>
+      <p class="mt-2">+250 780505948 / +250 728390015</p>
+    </div>
+    <div class="col-md-4">
+      <i class="fa-solid fa-envelope fa-2x text-primary"></i>
+      <p class="mt-2">www.nayituriki.com@gmail.com</p>
+    </div>
+    <div class="col-md-4">
+      <i class="fa-solid fa-location-dot fa-2x text-danger"></i>
+      <p class="mt-2">Kinyababa, Burera - Rwanda</p>
+    </div>
+  </div>
+</section>
 
-      <main class="container">
-<!-- Welcome Section -->
-      <section id="page2">
-            
-      </section>
+<!-- Contact Form -->
+<section class="container my-5">
+  <form action="https://formsubmit.co/www.nayituriki.com@gmail.com" method="POST" class="row g-3 shadow p-4 bg-light rounded">
+    <h3 class="text-center text-success">Send Me a Message</h3>
 
-<!-- Footer Section -->
-      <footer>
-      <fieldset>
-            <legend>Wish to Contact us?</legend>
-            <div class="form-check form-check-inline">
-            <input type="radio" class="form-check-input" value="Yes" id="radio1" onclick="disableOther('radio2'); alert('Thank you');" />
-            <label for="radio1" class="form-check-label">Yes</label>
-            </div>
-            <div class="form-check form-check-inline">
-            <input type="radio" class="form-check-input" value="No" id="radio2" onclick="disableOther('radio1'); alert('Thank you');" />
-            <label for="radio2" class="form-check-label">No</label>
-            </div>
-      </fieldset>
+    <div class="col-md-6">
+      <label for="names" class="form-label">Names:</label>
+      <input type="text" id="names" name="names" class="form-control" placeholder="Your full name" required>
+    </div>
 
-      <form id="formId" action="https://formsubmit.co/www.nayituriki.com@gmail.com" method="post" class="row g-3">
-            <div class="col-12 col-md-6">
-                  <label for="names" class="form-label">Names:</label>
-                  <div class="input-group">
-                  <input type="text" id="names" name="names" class="form-control" placeholder="Your names" required />
-                  <span class="input-group-text"><i class="fa-solid fa-address-card"></i></span>
-            </div>
-            </div>
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" id="email" name="email" class="form-control" placeholder="example@gmail.com" required>
+    </div>
 
-            <div class="col-12 col-md-6">
-                  <label for="email" class="form-label">Email:</label>
-                  <div class="input-group">
-                        <input type="email" id="email" name="email" class="form-control" placeholder="example@gmail.com" required />
-                        <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
-                  </div>
-            </div>
+    <div class="col-12">
+      <label for="message" class="form-label">Message:</label>
+      <textarea id="message" name="text" class="form-control" rows="5" placeholder="Type your message here..." required></textarea>
+    </div>
 
-            <div class="col-12">
-                  <label for="message" class="form-label">Message:</label>
-                  <div class="input-group">
-                        <textarea id="message" name="text" class="form-control" placeholder="Text your message" rows="4"></textarea>
-                        <span class="input-group-text"><i class="fa-regular fa-message"></i></span>
-                  </div>
-            </div>
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-success px-5">Send</button>
+    </div>
+  </form>
+</section>
 
-            <div class="col-12 text-center">
-                  <button type="submit" class="btn btn-custom">Send</button>
-            </div>
-      </form>
+<!-- Social Links -->
+<section class="text-center mt-4">
+  <h5>Follow Me</h5>
+  <div class="social-links">
+    <a href="https://github.com/adolphenayituriki" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" target="_blank" title="LinkedIn" style="color:#0077b5;"><i class="fab fa-linkedin"></i></a>
+    <a href="#" target="_blank" title="Instagram" style="color:#dd2476;"><i class="fab fa-instagram"></i></a>
+    <a href="http://www.youtube.com/@Relax-words03" target="_blank" title="YouTube" style="color:#ff0000;"><i class="fab fa-youtube"></i></a>
+  </div>
+</section>
 
-      <section class="lastContent text-center mt-5" id="scloll">
-            <p style="color: #098393;">Can you follow me, on below platforms to see further information about what am doing daily basis!</p>
-            <div class="footerContacts d-flex justify-content-center mb-3">
-                  <a href="https://github.com/adolphenayituriki" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                  <a href="#" target="_blank" title="LinkedIn" style="color:#0077b5;"><i class="fa-brands fa-linkedin"></i></a>
-                  <a href="#" target="_blank" title="Instagram" style="color:#dd2476;"><i class="fa-brands fa-square-instagram"></i></a>
-                  <a href="http://www.youtube.com/@Relax-words03" target="_blank" title="YouTube" style="color:#ff0000;" onclick="link()"><i class="fa-brands fa-youtube"></i></a>
-                  </div>
-            <div id="contentBox" class="fade-in" style="font-size: 20px;"><p style="color: #0077b5;"> © NAYITURIKI Adolphe_Kigali-Rwanda</p></div>
-      </section>
-      </footer>
-      </main>
+<!-- Footer -->
+<footer class="text-center mt-5">
+  <p style="color: #0077b5;">© 2025 NAYITURIKI Adolphe - Kigali, Rwanda</p>
+</footer>
 
-<!-- Bootstrap JS bundle -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="contact.js></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
