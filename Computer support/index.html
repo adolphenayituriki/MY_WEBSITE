@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Computer support (iCT)</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+      <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+<header>
+      <a href="#" class="header">COMPUTER SUPPORT (iCT)</a>
+      <button class="navbar-toggler" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+      <nav class="navigation" id="navBar">
+      <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+      </ul>
+      </nav>
+</header>
+
+      <div id="header">
+      <h1>
+            <div class="typing" id="typingText"></div>
+      </h1>
+</div>
+<video class="video-bg" autoplay loop muted playsinline>
+      <source src="./ict.mp4" type="video/mp4" />
+</video>
+<div class="content">
+      <h1>Welcome to Computer Support (iCT)</h1>
+      <p>Technology is our future
+
+<div class="box1">
+      <h2>What about computer maintenance?</h2>
+      <p>Computer maintenance is more likely to be careful</p>
+      <button onclick="openModal()">Learn More</button>
+      <div id="learnMoreContent" style="display: none; color: white; margin-top: 20px;">
+      <h3>Why Computer Maintenance Matters</h3>
+            <p>
+            Regular computer maintenance helps improve performance, protect against data loss,
+            prevent security threats, and extend the life of your device.
+            </p>
+</div>
+<div id="learnMoreModal" class="modal">
+      <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>More About Computer Maintenance</h2>
+      <p>
+      Maintenance includes updates, cleaning hardware, protecting data, and installing antivirus.
+      It's essential for keeping systems running smoothly and securely.
+      </p>
+      <a href="#contactForm" class="btn-help">Call for Help?</a>
+</div>
+</div>
+
+</div>
+
+<div class="box1">
+      <h3>Window installation</h3>
+</div>
+
+      <main class="container">
+            <section id="page1">
+            <h1>Computer support platform</h1>
+            <section class="image">
+                  <h1>Our Agents</h1>
+                  <div class="imageConteiner">
+                  <img src="./adolphe.jpg" alt=""><br>
+                  <p>NAYITURIKI Adolphe</p>
+                  <p><i class="fa-solid fa-phone" style="color: rgb(17, 216, 17);" id="icon"> +250 780 505 948</i></p>
+                  <p style="color: rgb(101, 90, 73);"><i class="fa-brands fa-square-whatsapp" id="icon"></i> +250 780 505 948</p>
+            </div>
+                  <div class="imageConteiner">
+                        <img src="./evode.png" alt="">
+                        <p>MUYISINGIZEMWESE Evode</p>
+                        <p><i class="fa-solid fa-phone" style="color: rgb(17, 216, 17);" id="icon"> +250 791 783 308</i></p>
+                        <p style="color: rgb(101, 90, 73);"><i class="fa-brands fa-square-whatsapp" id="icon"></i> +250 791 783 308</p>
+                  </div>
+            </section>
+            </section>
+      </main>
+
+      <table class="table">
+            <caption>Some services we offer</caption>
+            <thead>
+                  <tr>
+                        <th>No</th>
+                        <th>Service</th>
+                        <th>Functions</th>
+                        <th>Requirements</th>
+                  </tr>
+            </thead>
+            <tbody>
+            <tr>
+                  <td>1.</td>
+                  <td>Window installation</td>
+                  <td>This is some function of installation of window</td>
+                  <td>Network</td>
+            </tr>
+            <tr>
+                  <td>2.</td>
+                  <td>Microsoft office activation</td>
+                  <td>Activated M.S Offices</td>
+                  <td>Network</td>
+            </tr>
+            <tr>
+                  <td>3.</td>
+                  <td>Microsoft office installation</td>
+                  <td>Installing M.S Office</td>
+                  <td>USB & SSD storage</td>
+            </tr>
+            </tbody>
+      </table>
+
+      <div id="footer">
+            <form action="https://formsubmit.co/www.nayituriki.com@gmail.com" id="contactForm">
+                  <h1>Contact Us?</h1>
+                  <label for="username">Full Names:</label>
+                  <input type="text" id="username" name="username" placeholder="Enter your names" />
+                  <label for="email">Email or Phone number</label>
+                  <input type="text" id="email" name="email" placeholder="Your email or phone number" required />
+                  <label for="message">Message</label>
+                  <input type="text" id="message" name="message" placeholder="Write here your message" />
+                  <input type="submit" value="Submit" />
+            </form>
+            Copyright © www.nayituriki.com@gmail.com
+      </div>
+      <script src="./index.js"></script>
+</body>
+</html>

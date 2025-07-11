@@ -36,33 +36,58 @@ section#page2 {
       border-radius: 8px;
       box-shadow: 0 0 12px rgb(0 0 0 / 0.1);
       margin-bottom: 3rem;
+}
+h1{
       text-align: center;
+      color: rgb(7, 22, 10);
+      border-radius: 5px;
+      border-left: 2px solid green;
+      border-bottom: 2px solid yellow;
+      border-right: 2px solid blue ;
 }
 
 section#page2 h2 {
       font-size: 2.25rem;
       margin-bottom: 0.75rem;
+      text-align: center;
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
 }
 section#page2 p {
-      color: #007bff;
-}
-section#page2 img {
-      width: 150px;
-      border-radius: 50%;
-      height: 150px;
-      object-fit: cover;
-      border: 2px solid #ccc;
-      box-shadow: 0px 5px blue;
+      color: #0c253f;
+      margin-left: 30px;
 }
 
 section#page2 h3 {
       font-weight: 600;
       margin-bottom: 0.25rem;
+      text-decoration: underline;
 }
 
 section#page2 h4 {
       color: #666;
-      margin-bottom: 1rem;}
+      margin-bottom: 1rem;
+}
+section#page2 table{
+      border:  2px solid black;
+      width: 100%;
+      margin-top: 20px;
+      background-color: #d2d5d9;
+}
+@media (max-width: 600px) {
+.table {
+      font-size: 14px;
+      overflow-x: auto;
+      display: block;
+}
+}
+section#page2 table tr,td,th{
+      border:  1.5px solid black;
+      padding: 5px;
+}
+
+
 section.more{
       background-color: #007bff;
       text-align: center;
@@ -184,3 +209,4 @@ footer form .input-group-text {
       background-color: #0056b3;
       color: white;
 }
+
