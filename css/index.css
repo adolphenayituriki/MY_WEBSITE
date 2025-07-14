@@ -112,9 +112,10 @@ footer {
       margin-top: 3rem;
 }
 
-footer fieldset {
-      border: none;
-      margin-bottom: 1.5rem;
+footer h1{
+      color: #007bff;
+      text-align: center;
+      font-family: cursive;
 }
 
 footer legend {

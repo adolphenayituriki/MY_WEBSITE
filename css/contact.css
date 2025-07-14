@@ -24,97 +24,24 @@ header img {
 }
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-      color: #007bff;}
-
-
-#service {
-      background-image: url(../images/concept-of-ict-with-connected-icons-2HJBGD3.jpg);
-      background-size: cover; /* Show full image */
-      background-position: center;
-      background-color: #2f2d2d;
-      color: #fff;
-      padding: 20px;
+      color: #007bff;
+}
+.header h1{
       text-align: center;
+      margin-top: 20px;
 }
-
-h2 {
-      font-size: 35px;
-      text-align: center;
-      background: linear-gradient(to right, #0e5bae, #056729);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-}
-
-.option {
-      max-width: 400px;
-      border-radius: 5px;
-      width: 80%;
-      margin: 10px auto;
-      height: 45px;
-      font-size: 18px;
-      border: 2px solid rgb(10, 106, 123);
-      color: #019870;
-      cursor: pointer;
-}
-
-button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
+#myBody{
+      background-color: rgb(193, 163, 10);
       font-weight: bold;
-      background-color: #019870;
-      color: #fff;
-      border-radius: 10px;
-      cursor: pointer;
+      padding: 5px;
+}
+.container form{
+      background-color: #01060b;
+      border-radius: 5px;
 }
 
 button:hover {
       background-color: #017a60;
-}
-
-#afterSubmit {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #0d5572;
-            color: white;
-            font-size: 18px;
-            text-align: center;
-            max-width: 80%;
-            margin-left: 10%;
-            margin-right: 10%;
-            border-radius: 5px;
-}
-footer {
-      background: #222;
-      color: #eee;
-      padding: 2rem 1rem;
-      border-radius: 8px;
-      margin-top: 3rem;
-}
-
-footer fieldset {
-      border: none;
-      margin-bottom: 1.5rem;
-}
-
-footer legend {
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-}
-
-footer label {
-      margin-right: 1rem;
-      font-weight: 500;
-      cursor: pointer;
-}
-
-footer input[type="radio"] {
-      margin-right: 0.3rem;
-}
-
-footer form label {
-      font-weight: 600;
 }
 
 footer form input,
@@ -125,18 +52,8 @@ footer form textarea {
       width: 100%;
       resize: vertical;
 }
-
-footer form input:focus,
-footer form textarea:focus {
-      outline: none;
-      border-color: #007bff;
-      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-footer form .input-group-text {
-      background: transparent;
-      border: none;
-      color: #007bff;
+form label{
+      color: white;
 }
 
 .footerContacts a {
@@ -146,45 +63,14 @@ footer form .input-group-text {
       transition: color 0.3s ease;
 }
 
-.footerContacts a:hover {
-      color: #007bff;
-}
-
-.btn-custom {
-      background-color: #007bff;
-      border: none;
-      color: white;
-      padding: 0.5rem 1.25rem;
-      font-weight: 600;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-}
-
-.btn-custom:hover {
-      background-color: #0056b3;
-      color: white;
-}
-
-.contact-header {
-      background-color: #f8f9fa;
-      padding: 50px 0;
-      text-align: center;
-    }
-    .contact-header h1 {
-      font-size: 2.5rem;
-      color: #098393;
-    }
-    .contact-info {
-      padding: 30px 0;
-    }
-    .contact-info p {
-      font-size: 18px;
-    }
-    .social-links a {
+.social-links a {
       margin: 0 10px;
       font-size: 24px;
-    }
-    footer {
+}
+footer {
       padding: 40px 20px;
-      background-color: #f0f0f0;
-    }
+      background-color: #100f0f;
+}
+#container{
+      background-color: #007bff;
+}
