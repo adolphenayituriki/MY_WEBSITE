@@ -31,3 +31,14 @@ function changeContent() {
       }, 500);
 
 }
+
+function openModal(src, type) {
+      const modalBody = document.getElementById("modalBodyContent");
+      if (type === "pdf") {
+        modalBody.innerHTML = `<iframe src="${src}"></iframe>`;
+      } else {
+        modalBody.innerHTML = `<img src="${src}" alt="Certificate" />`;
+      }
+      const modal = new bootstrap.Modal(document.getElementById('certificateModal'));
+      modal.show();
+    }

@@ -69,6 +69,21 @@ section.more{
       color: wheat;
       border-radius: 5px;
 }
+.more{
+      text-align: center;
+      padding: 15px;
+      margin-top: 35px;
+      background-color: green;
+      color: white;
+      font-size: 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      border: none;
+}
+.more:hover{
+      background-color: rgb(130, 225, 130);
+      transition: 1s;
+}
 #contentBox .contentBox {
       background: white;
       padding: 1.5rem;

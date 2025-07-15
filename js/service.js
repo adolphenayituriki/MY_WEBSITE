@@ -1,8 +1,8 @@
 function disableOther(id){
       alert('Thank you for you choice. Am here by the Email of www.nayituriki.com@gmail.com. Ready to be helped? \n\n please press Ok to confirm!')
       document.getElementById(id).disabled = true;
-      document.getElementById('formId').style.backgroundColor = "burlywood";
-      document.getElementById('formFill').innerHTML = "Fill this now!";
+      document.getElementById('formId').style.backgroundColor = "rgb(9, 62, 91)";
+      document.getElementById('sendMeMessage').innerHTML = "Send me a message";
 }
 
 // this function is to return back while clicked on cancel  button appeared in footer
