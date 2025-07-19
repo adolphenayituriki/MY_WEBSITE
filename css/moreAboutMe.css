@@ -257,7 +257,7 @@ h1 {
 }
 
     /* Modal viewer */
-    .modal-content {
+.modal-content {
       height: 90vh;
     }
 
