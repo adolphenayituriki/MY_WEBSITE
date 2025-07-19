@@ -215,46 +215,46 @@ footer form .input-group-text {
       color: white;
 }
 
- h1 {
+h1 {
       text-align: center;
       margin-top: 30px;
       color: #007bff;
       font-weight: bold;
-    }
+}
 
-    .certificate-section {
+.certificate-section {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
       padding: 40px;
-    }
+}
 
-    .certificate-box {
+.certificate-box {
       background-color: #fff;
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 4px 5px rgba(0, 0, 0, 0.15);
       max-width: 350px;
       text-align: center;
       cursor: pointer;
-    }
+}
 
-    .certificate-box img {
+.certificate-box img {
       width: 100%;
-      max-width: 320px;
+      max-width: 220px;
       border-radius: 10px;
       transition: transform 0.2s;
-    }
+}
 
-    .certificate-box:hover img {
+.certificate-box:hover img {
       transform: scale(1.05);
-    }
+}
 
-    .certificate-box p {
+.certificate-box p {
       margin-top: 10px;
       font-size: 18px;
-    }
+}
 
     /* Modal viewer */
     .modal-content {
