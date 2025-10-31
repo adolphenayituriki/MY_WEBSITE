@@ -1,110 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Contact me?</title>
-      <link rel="icon" type="image/png" href="/images/Portrait of a Young Man.png">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel="stylesheet" href="/css/contact.css">
-</head>
-
-<body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-      <div class="container">
-      <a class="navbar-brand" href="https://github.com/adolphenayituriki" target="_blank">Nayituriki</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                  <a class="nav-link" href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
-            </li>
-            <li class="nav-item">
-                  <a class="nav-link" href="../html/service.html"></i> Service</a>
-            </li>
-            <li class="nav-item">
-                  <a class="nav-link" href="/html/get_started_to_project.html">Project</a>
-            </li>
-            <li class="nav-item">
-                  <a class="nav-link" href="./moreAboutMe.html">More_About_me?</a>
-            </li>
-            <li class="nav-item">
-                  <a class="nav-link active" aria-current="page"  href="#">Contact</a>
-            </li>
-            </ul>
-      </div>
-      </div>
-      </nav>
-      <section class="header">
-        <h1>Can you contact me!</h1>
-      </section>
-
-<!-- Header with image and Visit button -->
-      <p style="text-align: center;">If you would like to connect, feel free to send a message or follow me online.</p>
-      <section class="container contact-info" id="myBody">
-  <div class="row text-center">
+<!-- ====== SERVICES SECTION ====== -->
+<section class="container py-5 text-center" id="services-summary">
+  <h2 class="text-success mb-4">💼 My Services</h2>
+  <p class="text-muted">I offer a variety of services, from website development to digital system design, tailored to your needs and goals.</p>
+  <div class="row mt-4">
     <div class="col-md-4">
-      <i class="fa-solid fa-phone fa-2x text-success"></i>
-      <p class="mt-2">+250 780505948 / +250 728390015</p>
+      <i class="fas fa-laptop-code fa-3x text-success mb-3"></i>
+      <h5>Web Development</h5>
+      <p>Building responsive, user-friendly websites and web apps with modern technologies.</p>
     </div>
     <div class="col-md-4">
-      <i class="fa-solid fa-envelope fa-2x text-primary"></i>
-      <p class="mt-2">www.nayituriki.com@gmail.com</p>
+      <i class="fas fa-network-wired fa-3x text-success mb-3"></i>
+      <h5>System Design</h5>
+      <p>Creating efficient platforms like attendance systems, reporting tools, and digital solutions.</p>
     </div>
     <div class="col-md-4">
-      <i class="fa-solid fa-location-dot fa-2x text-danger"></i>
-      <p class="mt-2">Kinyababa, Burera - Rwanda</p>
+      <i class="fas fa-chalkboard-teacher fa-3x text-success mb-3"></i>
+      <h5>ICT Support</h5>
+      <p>Providing training and tech support to help individuals and businesses grow digitally.</p>
     </div>
   </div>
+  <a href="html/service.html" class="btn btn-outline-success mt-4">View All Services</a>
 </section>
 
-<!-- Contact Form -->
-<section class="container my-5" id="container">
-  <form action="https://formsubmit.co/www.nayituriki.com@gmail.com" method="POST" class="row g-3 shadow p-4" id="contact">
-    <h3 class="text-center text-success">Send Me a Message</h3>
+<hr class="my-5">
 
-    <div class="col-md-6">
-      <label for="names" class="form-label">Names:</label>
-      <input type="text" id="names" name="names" class="form-control" placeholder="Your full name" required>
+<!-- ====== PROJECTS SECTION ====== -->
+<section class="container py-5 text-center" id="projects-summary">
+  <h2 class="text-success mb-4">🚀 My Projects</h2>
+  <p class="text-muted">Explore the innovative projects I’ve built — showcasing my skills in web development, civic tech, and creative solutions.</p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="images/umuganda.png" class="card-img-top" alt="Umuganda Platform">
+        <div class="card-body">
+          <h5 class="card-title">Umuganda Attendance System</h5>
+          <p class="card-text">Track citizen participation and manage fines for missed community work.</p>
+        </div>
+      </div>
     </div>
-
-    <div class="col-md-6">
-      <label for="email" class="form-label">Email:</label>
-      <input type="email" id="email" name="email" class="form-control" placeholder="example@gmail.com" required>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="images/computer support.png" class="card-img-top" alt="Computer Support">
+        <div class="card-body">
+          <h5 class="card-title">ICT Learning Platform</h5>
+          <p class="card-text">A student-friendly system for learning maintenance and computer skills.</p>
+        </div>
+      </div>
     </div>
-
-    <div class="col-12">
-      <label for="message" class="form-label">Message:</label>
-      <textarea id="message" name="text" class="form-control" rows="5" placeholder="Type your message here..." required></textarea>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="images/citizen-engagement.png" class="card-img-top" alt="Citizen Engagement">
+        <div class="card-body">
+          <h5 class="card-title">Citizen Engagement System</h5>
+          <p class="card-text">A civic tool for reporting public issues and tracking government responses.</p>
+        </div>
+      </div>
     </div>
-
-    <div class="col-12 text-center">
-      <button type="submit" class="btn btn-success px-5">Send</button>
-    </div>
-  </form>
-</section>
-
-<!-- Social Links -->
-<section class="text-center mt-4">
-  <h5>Follow Me</h5>
-  <div class="social-links">
-    <a href="https://github.com/adolphenayituriki" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="#" target="_blank" title="LinkedIn" style="color:#0077b5;"><i class="fab fa-linkedin"></i></a>
-    <a href="#" target="_blank" title="Instagram" style="color:#dd2476;"><i class="fab fa-instagram"></i></a>
-    <a href="http://www.youtube.com/@Relax-words03" target="_blank" title="YouTube" style="color:#ff0000;"><i class="fab fa-youtube"></i></a>
   </div>
+
+  <a href="html/projects.html" class="btn btn-outline-success mt-4">View All Projects</a>
 </section>
 
-<!-- Footer -->
-<footer class="text-center mt-5">
-  <p style="color: #0077b5;">© 2025 NAYITURIKI Adolphe - Kigali, Rwanda</p>
-</footer>
+<hr class="my-5">
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<!-- ====== ABOUT ME SECTION ====== -->
+<section class="container py-5 text-center" id="about-summary">
+  <h2 class="text-success mb-4">👤 More About Me</h2>
+  <p class="text-muted">I’m Nayituriki Adolphe — a passionate developer and digital innovator, focused on creating impactful solutions and advancing technology for social good.</p>
+  <img src="images/Portrait of a Young Man.png" alt="Profile" class="rounded-circle shadow mb-3" width="140">
+  <p>I specialize in building user-centric web applications and contributing to community-driven digital projects.</p>
+  <a href="html/moreAboutMe.html" class="btn btn-outline-success mt-3">Read My Full Story</a>
+</section>
+
+<hr class="my-5">
+
+<!-- ====== CONTACT SECTION ====== -->
+<section class="container py-5 text-center" id="contact-summary">
+  <h2 class="text-success mb-4">📞 Get In Touch</h2>
+  <p class="text-muted">Want to collaborate, ask a question, or discuss a project? I’d love to hear from you!</p>
+
+  <div class="row justify-content-center">
+    <div class="col-md-3 mb-3">
+      <i class="fas fa-phone fa-2x text-success"></i>
+      <p>+250 780505948</p>
+    </div>
+    <div class="col-md-3 mb-3">
+      <i class="fas fa-envelope fa-2x text-primary"></i>
+      <p>nayituriki.com@gmail.com</p>
+    </div>
+    <div class="col-md-3 mb-3">
+      <i class="fas fa-map-marker-alt fa-2x text-danger"></i>
+      <p>Burera, Rwanda</p>
+    </div>
+  </div>
+
+  <a href="html/contact.html" class="btn btn-outline-success mt-4">Contact Me</a>
+</section>

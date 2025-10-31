@@ -25,14 +25,66 @@
       margin: 0 10px;
       font-size: 24px;
 }
+.certificate-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+}
+
+.certificate-box {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 4px 5px rgba(0, 0, 0, 0.15);
+      max-width: 350px;
+      text-align: center;
+      cursor: pointer;
+}
+
+.certificate-box img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 10px;
+      transition: transform 0.2s;
+}
+
+.certificate-box:hover img {
+      transform: scale(1.05);
+}
+
+.certificate-box p {
+      margin-top: 10px;
+      font-size: 18px;
+}
+
 </style>
 <body>
       <div class="container mt-5 text-center">
             <h1>Join to <h1 style="color: rgb(3, 98, 3);">Computer Support (iCT) Platform</h1>
-            <p>This is platform that help anyone especially students to gain excess knowledge and skills about the use
-                  of computer,
-                  their maintenance and troubleshooting of some issues.</p>
-            <a href="/Computer support/index.html" class="btn btn-primary" target="_blank">Get Started</a>
+            <div class="certificate-section">
+            <div class="certificate-box" onclick="openModal('/images/40-alx-aice-ai-career-essentials-certificate-adolphe-nayituriki (1).png', 'image')">
+                  <img src="/images/40-alx-aice-ai-career-essentials-certificate-adolphe-nayituriki (1).png" alt="ALX Rwanda Certificate">
+                  <button class="btn btn-primary">Computer Support (iCT) Platform</button>
+            </div>
+            <div class="certificate-box" onclick="location.href='/project/DTP_Hackaton_Project/index.html'">
+                  <img src="/images/umuganda.png" alt="DTP Certificate">
+                  <button class="btn btn-primary" onclick="document.location.href='/project/DTP_Hackaton_Project/index.html'">Umuganda Attendance & Fines Tracking System (UATS)</button>
+            </div>
+
+            <div class="certificate-box" onclick="openModal('/files/DTP Product Management Intermediate certificate.pdf', 'pdf')">
+                  <img src="/images/DTP Product Management Intermediate certificate.png" alt="EF SET Certificate">
+                  <p>📘DTP (Digital Talent Program) ; Product Management Intermediate </p>
+            </div>
+
+            <div class="certificate-box" onclick="openModal('/files/DTP Product Management Advanced certificate.pdf', 'pdf')">
+                  <img src="/images/DTP Product Management Advanced certificate.png" alt="DTS Certificate">
+                  <p>💠 DTP (Digital Talent Program)</p>
+            </div>
+
+      </div>
+            
       </div>
       <section class="text-center mt-4">
       <h5>Follow Me</h5>

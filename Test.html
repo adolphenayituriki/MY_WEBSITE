@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nayituriki Adolphe Portfolio</title>
+<link rel="icon" href="images/Portrait of a Young Man.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Add GSAP CDN in your <head> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; margin:0; }
+  
+  /* Navbar */
+  nav { transition: 0.3s; }
+  nav.scrolled { background-color: #87cefa !important; } /* clear blue */
+  .nav-link.active { font-weight: bold; color: #198754 !important; }
+
+  /* Hero */
+  /* HERO SECTION */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+}
+
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.hero-img {
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  border: 4px solid #198754;
+  object-fit: cover;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Floating icons */
+.floating-icon {
+  position: absolute;
+  font-size: 2.5rem;
+  color: rgba(255,255,255,0.4);
+  animation: floatIcon 8s infinite ease-in-out;
+}
+
+.floating-icon.delay-1 { animation-delay: 2s; top: 20%; left: 10%; }
+.floating-icon.delay-2 { animation-delay: 4s; bottom: 15%; right: 15%; }
+.floating-icon { top: 50%; right: 20%; }
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(15deg); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+  /* Section Titles */
+  .section-title { font-size:2.5rem; font-weight:700; color:#198754; margin-bottom:15px; }
+  .section-subtitle { color:#555; max-width:700px; margin:0 auto 30px; }
+
+  /* Cards */
+  .card { border-radius:12px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .card:hover { transform:translateY(-8px); box-shadow:0px 8px 20px rgba(0,0,0,0.15); }
+
+  /* Certificates */
+  .certificate-box img { width:100%; cursor:pointer; border-radius:10px; }
+
+  /* Footer */
+  footer { background-color:#000; color:#fff; padding:40px 20px; text-align:center; }
+  footer a { color:#fff; margin:0 10px; font-size:24px; }
+  footer a:hover { color:#198754; }
+
+  /* Social Links */
+  .social-links a { margin:0 10px; font-size:24px; color:inherit; transition:0.3s; }
+  .social-links a:hover { color:#198754; }
+
+  @media(max-width:768px){ .hero { padding:60px 20px; } }
+
+
+.certificate-box {
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.certificate-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+.certificate-box img {
+  transition: transform 0.3s ease;
+}
+.certificate-box img:hover {
+  transform: scale(1.02);
+}
+.certificate-box .btn {
+  font-size: 0.85rem;
+}
+.tech-card {
+  transition: transform 0.3s;
+}
+.tech-card:hover {
+  transform: translateY(-5px);
+}
+
+.tech-icon {
+  font-size: 4rem;
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.text-purple { color: #7952b3; }   /* Bootstrap */
+.text-indigo { color: #4F5B93; }   /* PHP brand color */
+
+
+/* SERVICES */
+#services {
+  background: #f9fdfc;
+  position: relative;
+}
+
+#services .service-card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#services .service-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+#services .service-card i {
+  font-size: 3rem;
+  color: #198754;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+
+#services .service-card:hover i {
+  transform: rotate(10deg) scale(1.2);
+}
+
+#services .service-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#services .service-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+#aboutmeImage:hover{
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+  transform: rotate(10deg) scale(1.0);
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-success" href="#">Nayituriki</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<header id="home" class="hero position-relative text-white">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="hero-bg-video">
+    <source src="/video/DTP HACKATHON 2025.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Overlay for readability -->
+  <div class="hero-overlay"></div>
+
+  <!-- Floating icons -->
+  <div class="floating-icon"><i class="fas fa-dove"></i></div>
+  <div class="floating-icon delay-1"><i class="fas fa-hands-praying"></i></div>
+  <div class="floating-icon delay-2"><i class="fas fa-dove "></i></div>
+
+  <div class="hero-content container">
+    <img src="images/Portrait of a Young Man.png" alt="Profile" class="hero-img mb-3">
+    <h1 class="fw-bold display-4">Hello, I'm <span class="text-success">Nayituriki Adolphe</span></h1>
+    <p class="lead fs-4 mb-4">Full Stack Developer | System Designer | ICT Trainer | Digital Innovator</p>
+    <a href="#projects" class="btn btn-success btn-lg px-5">Explore My Work</a>
+  </div>
+</header>
+
+<section id="services" class="py-5 text-center">
+  <div class="container">
+    <h2 class="section-title text-primary"><i class="fa-brands fa-servicestack text-warning"></i></i> Services</h2>
+    <p class="section-subtitle">Here’s what I can do for you to help your business or community thrive digitally:</p>
+    
+    <div class="row mt-4 g-4">
+      <!-- Web Dev -->
+      <div class="col-md-4">
+        <div class="service-card h-100">
+          <i class="fas fa-laptop-code text-primary"></i>
+          <h5>Web Development</h5>
+          <p>Create modern, responsive, and dynamic websites using HTML, CSS, JS, and PHP.</p>
+        </div>
+      </div>
+      <!-- System Design -->
+      <div class="col-md-4">
+        <div class="service-card h-100">
+          <i class="fas fa-database text-primary text-warning"></i>
+          <h5>System Design</h5>
+          <p>Design systems such as attendance tracking, community engagement, and reporting platforms.</p>
+        </div>
+      </div>
+      <!-- ICT Training -->
+      <div class="col-md-4">
+        <div class="service-card h-100">
+          <i class="fas fa-headset"></i>
+          <h5>ICT Support & Training</h5>
+          <p>Provide computer training, troubleshooting, and guidance to students or organizations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects" class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="section-title text-primary"><i class="fa-solid fa-list-check text-warning"></i> My  Projects</h2>
+    <p class="section-subtitle">A few projects that showcase my skills and creativity.</p>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img src="images/umuganda.png" class="card-img-top" alt="Umuganda Attendance">
+          <div class="card-body">
+            <h5 class="card-title">Umuganda Attendance Platform</h5>
+            <p>Track citizens' community work attendance and fines automatically.</p>
+            <a class="btn btn-success btn-sm text-ligth fw-bold" target="_blank" href="https://umuganda.netlify.app/html/citizendashbod%20copy">Open project</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img src="images/Digital tracking for health transparency .png" class="card-img-top" alt="Citizen Engagement">
+          <div class="card-body">
+            <h5 class="card-title">Digital tracking for health transparency</h5>
+            <p>Report public service issues and track resolution status effectively.</p>
+            <a class="btn btn-success btn-sm text-light fw-bold" target="_blank" href="https://aidtransparency.netlify.app/">Open project</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img src="images/computer support.png" class="card-img-top" alt="ICT Support">
+          <div class="card-body">
+            <h5 class="card-title">ICT Support Platform</h5>
+            <p>Help students learn computer skills, troubleshooting, and basic ICT concepts.</p>
+            <a class="btn btn-success btn-sm text-ligth fw-bold" target="_blank" href="https://umuganda.netlify.app/html/citizendashbod%20copy">Open project</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CV SECTION -->
+<section id="cv" class="py-5 position-relative" style="background: linear-gradient(135deg, #e6f7ff, #f8fffa); overflow: hidden;">
+  <div class="container text-center">
+    <h2 class="section-title text-success mb-3"><i class="fa-solid fa-file"></i> My CV</h2>
+    <p class="section-subtitle mb-5">Discover my experience, skills, and achievements in detail. Click below to view or download my complete CV.</p>
+
+    <!-- CV Card -->
+    <div class="cv-card mx-auto shadow-lg rounded-4 bg-white p-4 p-md-5" style="max-width: 600px; border: 2px solid #198754;">
+      <div class="d-flex flex-column align-items-center">
+        <img src="images/Portrait of a Young Man.png" alt="Adolphe CV" class="rounded-circle mb-3" style="width:120px; height:120px; object-fit:cover; border:4px solid #198754;">
+        <h3 class="fw-bold">Nayituriki Adolphe</h3>
+        <p class="text-muted mb-3">Full Stack Developer | System Designer | ICT Trainer</p>
+        <p class="text-secondary px-3">With expertise in front-end & back-end development, system design, and digital innovation, I build impactful solutions for communities and organizations.</p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
+        <a href="/files/NAYITURIKI-ADOLPHE-CV.pdf" target="_blank" class="btn btn-success btn-lg shadow-sm px-4 py-2">
+          <i class="fa-solid fa-eye me-2"></i> View CV
+        </a>
+        <a href="files/NAYITURIKI-ADOLPHE-CV.pdf" download class="btn btn-outline-success btn-lg shadow-sm px-4 py-2">
+          <i class="fa-solid fa-download me-2"></i> Download PDF
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animated Background Shapes -->
+  <div class="cv-shape bg-success rounded-circle position-absolute" style="width:120px; height:120px; top:10%; left:-60px; opacity:0.15;"></div>
+  <div class="cv-shape bg-success rounded-circle position-absolute" style="width:150px; height:150px; bottom:-75px; right:-75px; opacity:0.15;"></div>
+</section>
+
+
+<!-- ABOUT ME -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Profile Image -->
+      <div class="col-md-5 mb-4 mb-md-0 text-center">
+        <section id="about" class="py-5 text-center bg-light">
+  <div class="container">
+    <h2 class="section-title">My programming language</h2>
+    <p class="text-start mt-4" style="max-width: 900px; margin: 0 auto;">
+      <strong>HTML (HyperText Markup Language)</strong> is the backbone of every website — it structures the content and defines how information is organized on a page.  
+      <strong>CSS (Cascading Style Sheets)</strong> is used to style and design web pages, making them visually appealing, responsive, and user-friendly.  
+      <strong>Bootstrap</strong> is a powerful front-end framework that provides ready-made components and responsive layouts, helping me build websites faster and more efficiently.  
+      <strong>JavaScript</strong> brings life to web pages by adding interactivity, handling user events, and creating dynamic behavior in both front-end and back-end applications.  
+      <strong>PHP</strong> is a server-side scripting language I use to manage databases, handle backend logic, and power dynamic websites and web applications.  
+      Finally, <strong>Java</strong> is a versatile, object-oriented language that I use to develop scalable backend systems, enterprise applications, and complex software solutions.
+    </p>
+    <div class="row justify-content-center mt-5">
+      <!-- HTML -->
+      <div class="col-6 col-md-2 mb-4">
+        <div class="tech-card p-3 shadow rounded bg-white">
+          <i class="fab fa-html5 tech-icon text-danger"></i>
+          <h5 class="mt-3">HTML</h5>
+        </div>
+      </div>
+      <!-- CSS -->
+      <div class="col-6 col-md-2 mb-4">
+        <div class="tech-card p-3 shadow rounded bg-white">
+          <i class="fab fa-css3-alt tech-icon text-primary"></i>
+          <h5 class="mt-3">CSS</h5>
+        </div>
+      </div>
+      <!-- Bootstrap -->
+      <div class="col-6 col-md-2 mb-4">
+        <div class="tech-card p-3 shadow rounded bg-white">
+          <i class="fab fa-bootstrap tech-icon text-purple"></i>
+          <h5 class="mt-3">Boots</h5>
+        </div>
+      </div>
+      <!-- JavaScript -->
+      <div class="col-6 col-md-2 mb-4">
+        <div class="tech-card p-3 shadow rounded bg-white">
+          <i class="fab fa-js-square tech-icon text-warning"></i>
+          <h5 class="mt-3">Js</h5>
+        </div>
+      </div>
+      <!-- PHP -->
+      <div class="col-6 col-md-2 mb-4">
+        <div class="tech-card p-3 shadow rounded bg-white">
+          <i class="fab fa-php tech-icon text-indigo"></i>
+          <h5 class="mt-3">PHP</h5>
+        </div>
+      </div>
+      <!-- Java -->
+      <div class="col-6 col-md-2 mb-4">
+        <div class="tech-card p-3 shadow rounded bg-white">
+          <i class="fab fa-java tech-icon text-danger"></i>
+          <h5 class="mt-3">Java</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      </div>
+
+      <!-- Text Content -->
+      <div class="col-md-7">
+        <h2 class="section-title text-start"><img src="/images/about me.jpg" alt="Adolphe's Profile picture" class="hero-img mb-3" id="aboutmeImage"> About Me</h2>
+        <p class="section-subtitle text-start">
+          A tech enthusiast dedicated to creating <strong>innovative digital solutions</strong> that empower 
+          communities, businesses, and individuals.
+        </p>
+        <p class="text-start">
+          My name is <strong class="text-success">Nayituriki Adolphe</strong>, a 
+          <em>Full Stack Developer, System Designer, and ICT Trainer</em>.  
+          I specialize in <strong>web development, system design, and ICT support</strong>, with additional 
+          skills in video/photo editing and digital innovation.  
+        </p>
+        <p class="text-start">
+          My mission is simple: <strong>use technology to solve real-world challenges</strong>, 
+          whether it’s through designing efficient platforms, empowering students with ICT knowledge, 
+          or driving community-based digital projects.
+        </p>
+
+        <!-- Highlights -->
+        <div class="row text-start mt-4">
+          <div class="col-6 mb-3">
+            <i class="fas fa-code text-success me-2"></i> Full Stack Development
+          </div>
+          <div class="col-6 mb-3">
+            <i class="fas fa-network-wired text-success me-2"></i> System Design
+          </div>
+          <div class="col-6 mb-3">
+            <i class="fas fa-chalkboard-teacher text-success me-2"></i> ICT Training
+          </div>
+          <div class="col-6 mb-3">
+            <i class="fas fa-lightbulb text-success me-2"></i> Digital Innovation
+          </div>
+        </div>
+        <a href="mailto:www.nayituriki.com@gmail.com" class="btn btn-success">
+  Let's Connect
+</a>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="section-title">📜 Certifications</h2>
+    <p class="section-subtitle">Click a certificate to view or download.</p>
+    
+    <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+
+      <!-- ALX Certificate -->
+      <div class="col">
+        <div class="certificate-box text-center position-relative shadow-sm p-3 rounded bg-white">
+          <a href="#" class="cert-open" data-src="files/certificates/ALX_certificate.png" data-type="pdf">
+            <img src="images/40-alx-aice-ai-career-essentials-certificate-adolphe-nayituriki (1).png" alt="ALX Certificate" class="img-fluid rounded" style="cursor:pointer;">
+          </a>
+          <div class="mt-2">
+            <a href="files/40-alx-aice-ai-career-essentials-certificate-adolphe-nayituriki (1).pdf" target="_blank" class="btn btn-sm btn-outline-success me-1">View</a>
+            <a href="files/40-alx-aice-ai-career-essentials-certificate-adolphe-nayituriki (1).pdf" download class="btn btn-sm btn-success">Download</a>
+          </div>
+          <p class="mt-2">ALX Rwanda ACiE Certificate</p>
+        </div>
+      </div>
+
+      <!-- DTP Beginner Certificate -->
+      <div class="col">
+        <div class="certificate-box text-center position-relative shadow-sm p-3 rounded bg-white">
+          <a href="#" class="cert-open" data-src="files/certificates/DTP_Beginner.pdf" data-type="pdf">
+            <img src="images/DTP Product Management Begener certificate.png" alt="DTP Beginner" class="img-fluid rounded" style="cursor:pointer;">
+          </a>
+          <div class="mt-2">
+            <a href="files/DTP Product Management Begener certificate.pdf" target="_blank" class="btn btn-sm btn-outline-success me-1">View</a>
+            <a href="files/DTP Product Management Begener certificate.pdf" download class="btn btn-sm btn-success">Download</a>
+          </div>
+          <p class="mt-2">DTP Product Management Beginner</p>
+        </div>
+      </div>
+
+      <!-- DTP Intermediate Certificate -->
+      <div class="col">
+        <div class="certificate-box text-center position-relative shadow-sm p-3 rounded bg-white">
+          <a href="#" class="cert-open" data-src="files/certificates/DTP_Intermediate.pdf" data-type="pdf">
+            <img src="images/DTP Product Management Intermediate certificate.png" alt="DTP Intermediate" class="img-fluid rounded" style="cursor:pointer;">
+          </a>
+          <div class="mt-2">
+            <a href="files/DTP Product Management Intermediate certificate.pdf" target="_blank" class="btn btn-sm btn-outline-success me-1">View</a>
+            <a href="files/DTP Product Management Intermediate certificate.pdf" download class="btn btn-sm btn-success">Download</a>
+          </div>
+          <p class="mt-2">DTP Product Management Intermediate</p>
+        </div>
+      </div>
+
+      <!-- DTP Advanced Certificate -->
+      <div class="col">
+        <div class="certificate-box text-center position-relative shadow-sm p-3 rounded bg-white">
+          <a href="#" class="cert-open" data-src="files/certificates/DTP_Advanced.pdf" data-type="pdf">
+            <img src="images/DTP Product Management Advanced certificate.png" alt="DTP Advanced" class="img-fluid rounded" style="cursor:pointer;">
+          </a>
+          <div class="mt-2">
+            <a href="files/DTP Product Management Advanced certificate.pdf" target="_blank" class="btn btn-sm btn-outline-success me-1">View</a>
+            <a href="files/DTP Product Management Advanced certificate.pdf" download class="btn btn-sm btn-success">Download</a>
+          </div>
+          <p class="mt-2">DTP Product Management Advanced</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Certificate Modal -->
+<div class="modal fade" id="certModal" tabindex="-1" aria-labelledby="certModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="certModalLabel">Certificate</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <div id="certModalContent">
+          <p>Loading…</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a id="certModalOpenBtn" href="#" target="_blank" class="btn btn-outline-success">Open in new tab</a>
+        <a id="certModalDownloadBtn" href="#" download class="btn btn-success">Download</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- CONTACT -->
+<section id="contact" class="py-5 text-center" style="background:#f0f8ff;">
+  <div class="container">
+    <h2 class="section-title text-primary">📲  Contact Me</h2>
+    <p class="section-subtitle">Feel free to send me a message. I usually respond within 24 hours!</p>
+    
+    <form action="https://formsubmit.co/www.nayituriki.com@gmail.com" method="POST" class="row g-3 justify-content-center shadow p-4 rounded" style="background:white;">
+      <div class="col-md-5 position-relative">
+        <i class="fa-solid fa-user position-absolute " style="top:12px; left:10px; color:#198754;"></i>
+        <input type="text" class="form-control ps-5" name="names" placeholder="Your Full Name" required>
+      </div>
+      <div class="col-md-5 position-relative">
+        <i class="fa-solid fa-envelope position-absolute" style="top:12px; left:10px; color:#198754;"></i>
+        <input type="email" class="form-control ps-5" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="col-10 position-relative mt-3 bg-success  ">
+        <i class="fa-solid fa-message position-absolute" style="top:12px; left:10px; color:#198754;"></i>
+        <textarea class="form-control ps-5" name="text" rows="4" placeholder="Your Message" required></textarea>
+      </div>
+      <div class="col-12 mt-3">
+        <button type="submit" class="btn btn-success px-5">Send Message</button>
+      </div>
+    </form>
+
+    <!-- Social links -->
+    <div class="mt-4">
+      <h5>Or follow me on social media</h5>
+      <div class="social-links mt-2">
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://github.com/adolphenayituriki" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank" style="color: blue;"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/adolphenayituriki/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="http://www.youtube.com/@Kiliziya-vibes" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', function(){
+  const navbar = document.querySelector('nav');
+  if(window.scrollY > 80){
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+  gsap.utils.toArray("section, .card, .hero img, .section-title, .section-subtitle").forEach(elem => {
+    gsap.from(elem, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: elem,
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      }
+    });
+  });
+
+  window.addEventListener('scroll', function(){
+  document.querySelector('nav').classList.toggle('scrolled', window.scroll);
+
+
+gsap.from("#cv, #cv .section-title, #cv .section-subtitle, #cv .btn", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "#cv",
+    start: "top 80%",
+    toggleActions: "play none none reverse"
+  }
+});
+
+// Animate CV Section
+gsap.from("#cv .section-title", { opacity: 0, y: -40, duration: 1, scrollTrigger: { trigger: "#cv", start: "top 80%" } });
+gsap.from("#cv .section-subtitle", { opacity: 0, y: 40, duration: 1, delay: 0.2, scrollTrigger: { trigger: "#cv", start: "top 80%" } });
+gsap.from(".cv-card", { opacity: 0, scale: 0.8, duration: 1.2, delay: 0.4, ease: "elastic.out(1,0.5)", scrollTrigger: { trigger: ".cv-card", start: "top 85%" } });
+gsap.to(".cv-shape", { y: 20, repeat: -1, yoyo: true, duration: 4, ease: "sine.inOut" });
+
+
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 NAYITURIKI Adolphe - Kigali, Rwanda</p>
+  <p>www.nayituriki.com@gmail.com</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
