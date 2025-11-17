@@ -1,3 +1,13 @@
+window.addEventListener("scroll", () => {
+      const nav = document.querySelector(".custom-nav");
+      if (window.scrollY > 60) {
+            nav.classList.add("scrolled");
+      } else {
+            nav.classList.remove("scrolled");
+      }
+});
+
+
 // Navbar scroll effect
 window.addEventListener('scroll', function(){
       const navbar = document.querySelector('nav');

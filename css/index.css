@@ -1,9 +1,34 @@
- body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; margin:0; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; margin:0; }
   
   /* Navbar */
   nav { transition: 0.3s; }
   nav.scrolled { background-color: #87cefa !important; } /* clear blue */
   .nav-link.active { font-weight: bold; color: #198754 !important; }
+
+/* Low Transparent Navbar */
+.custom-nav {
+    background: rgba(232, 240, 244, 0.8) !important; /* slightly transparent */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: all .3s ease-in-out;
+}
+
+/* Darken slightly when user scrolls */
+.custom-nav.scrolled {
+    background: rgba(255, 255, 255, 0.94) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Link styles */
+.custom-nav .nav-link {
+    font-weight: 500;
+    transition: .25s ease-in-out;
+}
+
+.custom-nav .nav-link:hover,
+.custom-nav .nav-link.active {
+    color: #198754 !important; /* Bootstrap success green */
+}
 
   /* Hero */
   /* HERO SECTION */
@@ -187,4 +212,9 @@
 #aboutmeImage:hover{
   box-shadow: 0 12px 25px rgba(0,0,0,0.1);
   transform: rotate(10deg) scale(1.0);
+}
+
+#projects img:hover{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1.05);
 }
