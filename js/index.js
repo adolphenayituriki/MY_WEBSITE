@@ -52,4 +52,15 @@ gsap.from("#cv, #cv .section-title, #cv .section-subtitle, #cv .btn", {
 gsap.from("#cv .section-title", { opacity: 0, y: -40, duration: 1, scrollTrigger: { trigger: "#cv", start: "top 80%" } });
 gsap.from("#cv .section-subtitle", { opacity: 0, y: 40, duration: 1, delay: 0.2, scrollTrigger: { trigger: "#cv", start: "top 80%" } });
 gsap.from(".cv-card", { opacity: 0, scale: 0.8, duration: 1.2, delay: 0.4, ease: "elastic.out(1,0.5)", scrollTrigger: { trigger: ".cv-card", start: "top 85%" } });
-gsap.to(".cv-shape", { y: 20, repeat: -1, yoyo: true, duration: 4, ease: "sine.inOut" }):
+gsap.to(".cv-shape", { y: 20, repeat: -1, yoyo: true, duration: 4, ease: "sine.inOut" })
+
+function updateDateTime(){
+      let now = new Date();
+      let date = now.toLocaleDateString();
+      let time = now.toLocaleTimeString();
+      document.getElementById("currentDateTime").textContent = date +" " +time;
+      document.getElementById("time").textContent = "("+time+")";
+      document.getElementById("time").style.color = "#f0b00dff"
+}
+setInterval(updateDateTime, 1000);
+updateDateTime();
