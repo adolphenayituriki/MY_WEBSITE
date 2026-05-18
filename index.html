@@ -8,6 +8,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Add GSAP CDN in your <head> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
@@ -17,7 +18,7 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light custom-nav shadow-sm sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light custom-nav shadow-sm fixed-top">
       <div class="container">
             <a class="navbar-brand fw-bold text-success" href="#">ADOLPHE N. <span id="time"></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -37,59 +38,50 @@
 
 <!-- HERO SECTION -->
 <header id="home" class="hero position-relative text-white">
-      <!-- Background Video -->
-      <video autoplay muted loop playsinline class="hero-bg-video">
-            <source src="/video/DTP HACKATHON 2025.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-      </video>
+       <!-- Floating icons -->
+       <div class="floating-icon"><i class="fas fa-dove"></i></div>
+       <div class="floating-icon delay-1"><i class="fas fa-hands-praying"></i></div>
+       <div class="floating-icon delay-2"><i class="fas fa-dove "></i></div>
 
-      <!-- Overlay for readability -->
-      <div class="hero-overlay"></div>
-
-            <!-- Floating icons -->
-            <div class="floating-icon"><i class="fas fa-dove"></i></div>
-            <div class="floating-icon delay-1"><i class="fas fa-hands-praying"></i></div>
-            <div class="floating-icon delay-2"><i class="fas fa-dove "></i></div>
-
-      <div class="hero-content container">
-            <img src="images/Portrait of a Young Man.png" alt="Profile" class="hero-img mb-3">
-            <h1 class="fw-bold display-4">Hello, I'm <span class="text-warning">Nayituriki Adolphe</span></h1>
-            <p class="lead fs-4 mb-4">Full Stack Developer | System Designer | ICT Trainer | Digital Innovator</p>
-            <a href="#projects" class="btn btn-warning btn-lg px-5 fw-bold text-muted">Explore My Work</a>
-      </div>
+       <div class="hero-content container">
+             <img src="images/Portrait of a Young Man.png" alt="Profile" class="hero-img mb-3">
+             <h1 class="fw-bold display-4">Hello, I'm <span class="text-warning">Nayituriki Adolphe</span></h1>
+             <p class="lead fs-4 mb-4">Passionate IT specialist with hands-on experience in full-stack development, product management, and digital literacy training.</p>
+             <a href="#projects" class="btn btn-warning btn-lg px-5 fw-bold text-muted">Explore My Work</a>
+       </div>
 </header>
 
-<section id="services" class="py-5 text-center">
+<section id="services" class="text-center">
       <div class="container">
             <h2 class="section-title text-primary"><i class="fa-brands fa-servicestack text-warning"></i></i> Services</h2>
             <p class="section-subtitle">Here’s what I can do for you to help your business or community thrive digitally:</p>
             
-            <div class="row mt-4 g-4">
-                  <!-- Web Dev -->
-                  <div class="col-md-4">
-                        <div class="service-card h-100">
-                              <i class="fas fa-laptop-code text-primary"></i>
-                              <h5>Web Development</h5>
-                              <p>Create modern, responsive, and dynamic websites using HTML, CSS, JS, and PHP.</p>
-                        </div>
-                  </div>
-                  <!-- System Design -->
-                  <div class="col-md-4">
-                        <div class="service-card h-100">
-                              <i class="fas fa-database text-primary text-warning"></i>
-                              <h5>System Design</h5>
-                              <p>Design systems such as attendance tracking, community engagement, and reporting platforms.</p>
-                        </div>
-                  </div>
-                  <!-- ICT Training -->
-                  <div class="col-md-4">
-                        <div class="service-card h-100">
-                              <i class="fas fa-headset"></i>
-                              <h5>ICT Support & Training</h5>
-                              <p>Provide computer training, troubleshooting, and guidance to students or organizations.</p>
-                        </div>
-                  </div>
-            </div>
+             <div class="row mt-4 g-4">
+                   <!-- Web Development & ICT Training -->
+                   <div class="col-md-4">
+                         <div class="service-card h-100">
+                               <i class="fas fa-laptop-code text-primary"></i>
+                               <h5>Web Development & ICT Training</h5>
+                               <p>Build modern websites and web applications while providing comprehensive training in MS Office, Google Suites, Canva, Photoshop, and software programming fundamentals.</p>
+                         </div>
+                   </div>
+                   <!-- System Design & Product Management -->
+                   <div class="col-md-4">
+                         <div class="service-card h-100">
+                               <i class="fas fa-database text-primary text-warning"></i>
+                               <h5>System Design & Product Management</h5>
+                               <p>Design and develop systems for attendance tracking, community engagement, and reporting platforms with expertise in product lifecycle management.</p>
+                         </div>
+                   </div>
+                   <!-- Digital Literacy & Digital Innovation -->
+                   <div class="col-md-4">
+                         <div class="service-card h-100">
+                               <i class="fas fa-headset"></i>
+                               <h5>Digital Literacy & Innovation</h5>
+                               <p>Teach digital skills including touch typing, video/photo editing, and online marketing while driving community-based digital projects and innovation.</p>
+                         </div>
+                   </div>
+             </div>
       </div>
 </section>
 
@@ -99,181 +91,193 @@
             <h2 class="section-title text-primary"><i class="fa-solid fa-list-check text-warning"></i> My  Projects</h2>
             <p class="section-subtitle">A few projects that showcase my skills and creativity.</p>
             <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
-                  <div class="col">
-                        <div class="card h-100 shadow-sm">
-                              <img src="images/umuganda.png" class="card-img-top" alt="Umuganda Attendance">
-                              <div class="card-body">
-                                    <h5 class="card-title">Umuganda Attendance Platform</h5>
-                                    <p>Track citizens' community work attendance and fines automatically.</p>
-                                    <a class="btn btn-live btn-success  text-ligth fw-bold" target="_blank" href="https://umuganda.netlify.app/html/citizendashbod%20copy"><i class="fa-solid fa-tower-broadcast" style="color: rgb(219, 184, 10);"></i> Go LIVE</a>
-                                    <a class="btn btn-success  text-light fw-bold" href="https://github.com/adolphenayituriki/umuganda_system"><i class="fa-brands fa-github" style="color: black;"></i> GitHub</a>
-                              </div>
+
+                   <div class="col">
+                         <div class="card h-100 shadow-sm">
+                               <img src="/images/Kainafresh E-commerce website.png" class="card-img-top" alt="Citizen Engagement">
+                               <div class="card-body">
+                                     <h5 class="card-title">Kainafresh Ltd E-commerce website</h5>
+                                     <p>An E-commerce website for Kainafresh Ltd.</p>
+                                     <a class="btn btn-primary" target="_blank" href="https://kainafresh.rw"><i class="fa-solid fa-tower-broadcast"></i> Go LIVE</a>
+                                     <a class="btn btn-outline"> Built by Wordpress</a>
+                               </div>
+                         </div>
+                   </div>
                         </div>
                   </div>
-                  <div class="col">
-                        <div class="card h-100 shadow-sm">
-                              <img src="images/Digital tracking for health transparency .png" class="card-img-top" alt="Citizen Engagement">
-                              <div class="card-body">
-                                    <h5 class="card-title">Digital tracking for health transparency</h5>
-                                    <p>Report public service issues and track resolution status effectively.</p>
-                                    <a class="btn btn-success text-light fw-bold" target="_blank" href="https://aidtransparency.netlify.app/"><i class="fa-solid fa-tower-broadcast" style="color: rgb(219, 184, 10);"></i> Go LIVE</a>
-                                    <a class="btn btn-success  text-light fw-bold" href="https://github.com/adolphenayituriki/Digital-Tracking-Solution-for-Health-Service-Transparency-System2-main"><i class="fa-brands fa-github" style="color: black;"></i> GitHub</a>
-                              </div>
-                        </div>
-                  </div>
-                  <div class="col">
-                        <div class="card h-100 shadow-sm">
-                              <img src="images/computer support.png" class="card-img-top" alt="ICT Support">
-                              <div class="card-body">
-                                    <h5 class="card-title">ICT Support Platform</h5>
-                                    <p>Help students learn computer skills, troubleshooting, and basic ICT concepts.</p>
-                                    <a class="btn btn-success text-ligth fw-bold" target="_blank" href="https://umuganda.netlify.app/html/citizendashbod%20copy"><i class="fa-solid fa-tower-broadcast" style="color: rgb(219, 184, 10);"></i> Go LIVE</a>
-                                    <a class="btn btn-success  text-light fw-bold" href=""><i class="fa-brands fa-github" style="color: black;"></i> GitHub</a>
-                              </div>
-                        </div>
-                  </div>
+
+                   <div class="col">
+                         <div class="card h-100 shadow-sm">
+                               <img src="images/Digital tracking for health transparency .png" class="card-img-top" alt="Citizen Engagement">
+                               <div class="card-body">
+                                     <h5 class="card-title">Digital tracking for health transparency</h5>
+                                     <p>Report public service issues and track resolution status effectively.</p>
+                                     <a class="btn btn-primary" target="_blank" href="https://aidtransparency.netlify.app/"><i class="fa-solid fa-tower-broadcast"></i> Go LIVE</a>
+                                     <a class="btn btn-outline" href="https://github.com/adolphenayituriki/Digital-Tracking-Solution-for-Health-Service-Transparency-System2-main"><i class="fab fa-github"></i> GitHub</a>
+                               </div>
+                         </div>
+                   </div>
+
+                     <div class="col">
+                         <div class="card h-100 shadow-sm">
+                               <img src="images/Rwanda ICT Chamber Website redesign.png" class="card-img-top" alt="Rwanda ICT Chamber Website redesign">
+                               <div class="card-body">
+                                     <h5 class="card-title">Rwanda ICT Chamber Website redesign</h5>
+                                     <p>Rwanda ICT Chamber Website redesign project.</p>
+                                     <a class="btn btn-primary" target="_blank" href="https://ict.redp.rw/"><i class="fa-solid fa-tower-broadcast"></i> Go LIVE</a>
+                                     <a class="btn btn-outline">Built with WordPress</a>
+                               </div>
+                         </div>
+                   </div>
+
+                   <div class="col">
+                         <div class="card h-100 shadow-sm">
+                               <img src="images/umuganda.png" class="card-img-top" alt="Umuganda Attendance">
+                               <div class="card-body">
+                                     <h5 class="card-title">Umuganda Attendance Platform</h5>
+                                     <p>Track citizens' community work attendance and fines automatically.</p>
+                                     <a class="btn btn-primary" target="_blank" href="https://umuganda.netlify.app/html/citizendashbod%20copy"><i class="fa-solid fa-tower-broadcast"></i> Go LIVE</a>
+                                     <a class="btn btn-outline" href="https://github.com/adolphenayituriki/umuganda_system"><i class="fab fa-github"></i> GitHub</a>
+                               </div>
+                         </div>
+                   </div>
+
+                   <div class="col">
+                         <div class="card h-100 shadow-sm">
+                               <img src="images/computer support.png" class="card-img-top" alt="ICT Support">
+                               <div class="card-body">
+                                     <h5 class="card-title">ICT Support Platform</h5>
+                                     <p>Help students learn computer skills, troubleshooting, and basic ICT concepts.</p>
+                                     <a class="btn btn-primary" target="_blank" href="https://umuganda.netlify.app/html/citizendashbod%20copy"><i class="fa-solid fa-tower-broadcast"></i> Go LIVE</a>
+                                     <a class="btn btn-outline">GitHub</a>
+                               </div>
+                         </div>
+                   </div>
             </div>
       </div>
 </section>
 
 <!-- CV SECTION -->
-<section id="cv" class="py-5 position-relative" style="background: linear-gradient(135deg, #e6f7ff, #f8fffa); overflow: hidden;">
-      <div class="container text-center">
-            <h2 class="section-title text-success mb-3"><i class="fa-solid fa-file"></i> My CV</h2>
-            <p class="section-subtitle mb-5">Discover my experience, skills, and achievements in detail. Click below to view or download my complete CV.</p>
+<section id="cv" class="cv-section">
+    <div class="container">
+        <h2 class="section-title text-center mb-5"><i class="fa-solid fa-file"></i> My CV</h2>
+        <p class="section-subtitle text-center mb-5">
+            Discover my experience, skills, and achievements in detail. Click below to view or download my complete CV.
+        </p>
 
-      <!-- CV Card -->
-      <div class="cv-card mx-auto shadow-lg rounded-4 bg-white p-4 p-md-5" style="max-width: 600px; border: 2px solid #198754;">
-            <div class="d-flex flex-column align-items-center">
-                  <img src="images/Portrait of a Young Man.png" alt="Adolphe CV" class="rounded-circle mb-3" style="width:120px; height:120px; object-fit:cover; border:4px solid #198754;">
-                  <h3 class="fw-bold">Nayituriki Adolphe</h3>
-                  <p class="text-muted mb-3">Full Stack Developer | System Designer | ICT Trainer</p>
-                  <p class="text-secondary px-3">With expertise in front-end & back-end development, system design, and digital innovation, I build impactful solutions for communities and organizations.</p>
-            </div>
+        <!-- CV Card -->
+        <div class="cv-card-container">
+            <div class="cv-card">
+                <div class="d-flex flex-column align-items-center">
+                    <img src="images/Portrait of a Young Man.png" alt="Adolphe CV" class="rounded-circle mb-4" style="width:140px; height:140px; object-fit:cover; border:4px solid #3b82f6;">
+                    <h3 class="fw-bold">Nayituriki Adolphe</h3>
+                    <p class="text-muted mb-3">Full Stack Developer | System Designer | ICT Trainer</p>
+                    <p class="text-center px-4">
+                        With expertise in front-end & back-end development, system design, and digital innovation, I build impactful solutions for communities and organizations.
+                    </p>
+                </div>
 
-            <!-- Buttons -->
-            <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
-                  <a href="/files/NAYITURIKI-ADOLPHE-CV.pdf" target="_blank" class="btn btn-success btn-lg shadow-sm px-4 py-2">
+                <!-- Buttons -->
+                <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
+                    <a href="/files/NAYITURIKI-ADOLPHE-CV.pdf" target="_blank" class="btn btn-primary btn-lg shadow-sm px-4 py-2">
                         <i class="fa-solid fa-eye me-2"></i> View CV
-                  </a>
-                  <a href="files/NAYITURIKI-ADOLPHE-CV.pdf" download class="btn btn-outline-success btn-lg shadow-sm px-4 py-2">
+                    </a>
+                    <a href="files/NAYITURIKI-ADOLPHE-CV.pdf" download class="btn btn-outline btn-lg shadow-sm px-4 py-2">
                         <i class="fa-solid fa-download me-2"></i> Download PDF
-                  </a>
+                    </a>
+                </div>
             </div>
-      </div>
-      </div>
-
-      <!-- Animated Background Shapes -->
-      <div class="cv-shape bg-success rounded-circle position-absolute" style="width:120px; height:120px; top:10%; left:-60px; opacity:0.15;"></div>
-      <div class="cv-shape bg-success rounded-circle position-absolute" style="width:150px; height:150px; bottom:-75px; right:-75px; opacity:0.15;"></div>
+        </div>
+    </div>
 </section>
 
 <!-- ABOUT ME -->
 <section id="about" class="py-5">
-      <div class="container">
-            <div class="row align-items-center">
-                  <!-- Profile Image -->
-                  <div class="col-md-5 mb-4 mb-md-0 text-center">
-                        <section id="about" class="py-5 text-center bg-light">
-                              <div class="container">
-                                    <h2 class="section-title">My programming language</h2>
-                                    <p class="text-start mt-4" style="max-width: 900px; margin: 0 auto;">
-                                          <strong>HTML (HyperText Markup Language)</strong> is the backbone of every website — it structures the content and defines how information is organized on a page.
-                                          <strong>CSS (Cascading Style Sheets)</strong> is used to style and design web pages, making them visually appealing, responsive, and user-friendly.
-                                          <strong>Bootstrap</strong> is a powerful front-end framework that provides ready-made components and responsive layouts, helping me build websites faster and more efficiently.
-                                          <strong>JavaScript</strong> brings life to web pages by adding interactivity, handling user events, and creating dynamic behavior in both front-end and back-end applications.
-                                          <strong>PHP</strong> is a server-side scripting language I use to manage databases, handle backend logic, and power dynamic websites and web applications.
-                                          Finally, <strong>Java</strong> is a versatile, object-oriented language that I use to develop scalable backend systems, enterprise applications, and complex software solutions.
-                                    </p>
-                                    <div class="row justify-content-center mt-5">
-                                          <!-- HTML -->
-                                          <div class="col-6 col-md-2 mb-4">
-                                                <div class="tech-card p-3 shadow rounded bg-white">
-                                                      <i class="fab fa-html5 tech-icon text-danger"></i>
-                                                      <h5 class="mt-3">HTML</h5>
-                                                </div>
-                                          </div>
-                                          <!-- CSS -->
-                                          <div class="col-6 col-md-2 mb-4">
-                                                <div class="tech-card p-3 shadow rounded bg-white">
-                                                      <i class="fab fa-css3-alt tech-icon text-primary"></i>
-                                                      <h5 class="mt-3">CSS</h5>
-                                                </div>
-                                          </div>
-                                          <!-- Bootstrap -->
-                                          <div class="col-6 col-md-2 mb-4">
-                                                <div class="tech-card p-3 shadow rounded bg-white">
-                                                      <i class="fab fa-bootstrap tech-icon text-purple"></i>
-                                                      <h5 class="mt-3">Boots</h5>
-                                                </div>
-                                          </div>
-                                          <!-- JavaScript -->
-                                          <div class="col-6 col-md-2 mb-4">
-                                                <div class="tech-card p-3 shadow rounded bg-white">
-                                                      <i class="fab fa-js-square tech-icon text-warning"></i>
-                                                      <h5 class="mt-3">Js</h5>
-                                                </div>
-                                          </div>
-                                          <!-- PHP -->
-                                          <div class="col-6 col-md-2 mb-4">
-                                                <div class="tech-card p-3 shadow rounded bg-white">
-                                                      <i class="fab fa-php tech-icon text-indigo"></i>
-                                                      <h5 class="mt-3">PHP</h5>
-                                                </div>
-                                          </div>
-                                          <!-- Java -->
-                                          <div class="col-6 col-md-2 mb-4">
-                                                <div class="tech-card p-3 shadow rounded bg-white">
-                                                      <i class="fab fa-java tech-icon text-danger"></i>
-                                                      <h5 class="mt-3">Java</h5>
-                                                </div>
-                                          </div>
-                                    </div>
-                              </div>
-                        </section>
-
-                  </div>
-
-                  <!-- Text Content -->
-                  <div class="col-md-7">
-                        <h2 class="section-title text-start"><img src="/images/about me.jpg" alt="Adolphe's Profile picture" class="hero-img mb-3" id="aboutmeImage"> About Me</h2>
-                        <p class="section-subtitle text-start">
-                              A tech enthusiast dedicated to creating <strong>innovative digital solutions</strong> that empower
-                              communities, businesses, and individuals.
-                        </p>
-                        <p class="text-start">
-                              My name is <strong class="text-success">Nayituriki Adolphe</strong>, a
-                              <em>Full Stack Developer, System Designer, and ICT Trainer</em>.
-                              I specialize in <strong>web development, system design, and ICT support</strong>, with additional
-                              skills in video/photo editing and digital innovation.
-                        </p>
-                        <p class="text-start">
-                              My mission is simple: <strong>use technology to solve real-world challenges</strong>,
-                              whether it’s through designing efficient platforms, empowering students with ICT knowledge,
-                              or driving community-based digital projects.
-                        </p>
-
-                        <!-- Highlights -->
-                        <div class="row text-start mt-4">
-                              <div class="col-6 mb-3">
-                                    <i class="fas fa-code text-success me-2"></i> Full Stack Development
-                              </div>
-                              <div class="col-6 mb-3">
-                                    <i class="fas fa-network-wired text-success me-2"></i> System Design
-                              </div>
-                              <div class="col-6 mb-3">
-                                    <i class="fas fa-chalkboard-teacher text-success me-2"></i> ICT Training
-                              </div>
-                              <div class="col-6 mb-3">
-                                    <i class="fas fa-lightbulb text-success me-2"></i> Digital Innovation
-                              </div>
-                        </div>
-                        <a href="mailto:www.nayituriki.com@gmail.com" class="btn btn-success">
-                              Let's Connect
-                        </a>
-                  </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Profile Image -->
+            <div class="col-md-5 mb-4 mb-md-0 text-center">
+                <img src="/images/about me.jpg" alt="Adolphe's Profile picture" class="hero-img mb-3" id="aboutmeImage">
             </div>
-      </div>
+
+            <!-- Text Content -->
+            <div class="col-md-7">
+                <h2 class="section-title text-start">About Me</h2>
+                <p class="section-subtitle text-start">
+                    A tech enthusiast dedicated to creating <strong>innovative digital solutions</strong> that empower
+                    communities, businesses, and individuals.
+                </p>
+                <p class="text-start">
+                    My name is <strong class="text-success">Nayituriki Adolphe</strong>, a
+                    <em>Full Stack Developer, System Designer, and ICT Trainer</em>.
+                    I specialize in <strong>web development, system design, and ICT support</strong>, with additional
+                    skills in video/photo editing and digital innovation.
+                </p>
+                <p class="text-start">
+                    My mission is simple: <strong>use technology to solve real-world challenges</strong>,
+                    whether it’s through designing efficient platforms, empowering students with ICT knowledge,
+                    or driving community-based digital projects.
+                </p>
+
+                <!-- Highlights -->
+                <div class="row text-start mt-4">
+                    <div class="col-6 mb-3">
+                        <i class="fas fa-code text-success me-2"></i> Full Stack Development
+                    </div>
+                    <div class="col-6 mb-3">
+                        <i class="fas fa-network-wired text-success me-2"></i> System Design
+                    </div>
+                    <div class="col-6 mb-3">
+                        <i class="fas fa-chalkboard-teacher text-success me-2"></i> ICT Training
+                    </div>
+                    <div class="col-6 mb-3">
+                        <i class="fas fa-lightbulb text-success me-2"></i> Digital Innovation
+                    </div>
+                </div>
+                <a href="mailto:www.nayituriki.com@gmail.com" class="btn btn-success">
+                    Let's Connect
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="skills" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Technical Skills</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="row g-4">
+                    <!-- Programming Languages -->
+                    <div class="col-md-6">
+                        <div class="skill-category">
+                            <h3 class="section-title text-secondary">Programming Languages</h3>
+                            <div class="skills-badge">
+                                <span class="skill-tag">HTML5/CSS3</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">PHP & MySQL</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tools & Platforms -->
+                    <div class="col-md-6">
+                        <div class="skill-category">
+                            <h3 class="section-title text-secondary">Tools & Platforms</h3>
+                            <div class="skills-badge">
+                                <span class="skill-tag">WordPress</span>
+                                <span class="skill-tag">Photoshop (Intermediate)</span>
+                                <span class="skill-tag">Canva (Full)</span>
+                                <span class="skill-tag">Google Suites</span>
+                                <span class="skill-tag">MS Office (All)</span>
+                                <span class="skill-tag">CapCut / Filmora</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- CERTIFICATIONS -->
@@ -366,46 +370,71 @@
 </div>
 
 <!-- CONTACT -->
-<section id="contact" class="py-5 text-center" style="background:#f0f8ff;">
-      <div class="container">
-            <h2 class="section-title text-primary">📲  Contact Me</h2>
-            <p class="section-subtitle">Feel free to send me a message. I usually respond within 24 hours!</p>
-      
-            <form action="https://formsubmit.co/www.nayituriki.com@gmail.com" method="POST" class="row g-3 justify-content-center shadow p-4 rounded" style="background:white;">
-                  <div class="col-md-5 position-relative">
-                        <i class="fa-solid fa-user position-absolute " style="top:12px; left:10px; color:#198754;"></i>
-                        <input type="text" class="form-control ps-5" name="names" placeholder="Your Full Name" required>
-                  </div>
-                  <div class="col-md-5 position-relative">
-                        <i class="fa-solid fa-envelope position-absolute" style="top:12px; left:10px; color:#198754;"></i>
-                        <input type="email" class="form-control ps-5" name="email" placeholder="Your Email" required>
-                  </div>
-                  <div class="col-10 position-relative mt-3 bg-success  ">
-                        <i class="fa-solid fa-message position-absolute" style="top:12px; left:10px; color:#198754;"></i>
-                        <textarea class="form-control ps-5" name="text" rows="4" placeholder="Your Message" required></textarea>
-                  </div>
-                  <div class="col-12 mt-3">
-                        <button type="submit" class="btn btn-success px-5">Send Message</button>
-                  </div>
-            </form>
-
-            <!-- Social links -->
-            <div class="mt-4">
-                  <h5>Or follow me on social media</h5>
-                  <div class="social-links mt-2">
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="https://github.com/adolphenayituriki" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank" style="color: blue;"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/adolphenayituriki/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="http://www.youtube.com/@Kiliziya-vibes" target="_blank"><i class="fab fa-youtube"></i></a>
-                  </div>
+<section id="contact" class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Contact Me</h2>
+        <p class="section-subtitle text-center mb-5">
+            Feel free to send me a message. I usually respond within 24 hours!
+        </p>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="contact-card">
+                    <form action="https://formsubmit.co/www.nayituriki.com@gmail.com" method="POST" class="row g-4">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="names" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="names" name="names" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject (optional)">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="text" rows="5" placeholder="Type your message here..." required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-      </div>
+        </div>
+        
+        <!-- Social links -->
+        <div class="mt-5 pt-4 border-top">
+            <h5 class="text-center mb-4">Or follow me on social media</h5>
+            <div class="social-links justify-content-center">
+                <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://github.com/adolphenayituriki" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/adolphenayituriki/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="http://www.youtube.com/@Kiliziya-vibes" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- FOOTER -->
 <footer>
-      <p>© <span  id="currentDateTime"></span> NAYITURIKI Adolphe - Kigali, Rwanda</p>
-      <p>www.nayituriki.com@gmail.com</p>
+    <div class="container">
+        <div class="footer-content">
+            <h3>NAYITURIKI Adolphe</h3>
+            <p>© <span id="currentDateTime"></span> - Kigali, Rwanda</p>
+            <p><a href="mailto:www.nayituriki.com@gmail.com">www.nayituriki.com@gmail.com</a></p>
+        </div>
+    </div>
 </footer>
 <script src="/js/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
