@@ -99,6 +99,108 @@ body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; margin:0;
    }
 }
 
+/* Hero content animation */
+.hero-content {
+   position: relative;
+   z-index: 2;
+   animation: fadeInUp 1.5s ease-out;
+}
+
+/* Floating animation for hero image */
+.hero-img {
+   border-radius: 50%;
+   width: 170px;
+   height: 170px;
+   border: 4px solid #3b82f6;
+   object-fit: cover;
+   animation: float 6s ease-in-out infinite, fadeIn 2s ease-in-out;
+}
+
+@keyframes float {
+   0% {
+      transform: translateY(0px);
+   }
+   50% {
+      transform: translateY(-15px);
+   }
+   100% {
+      transform: translateY(0px);
+   }
+}
+
+/* Fade in up */
+@keyframes fadeInUp {
+   0% {
+      opacity: 0;
+      transform: translateY(30px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+/* Fade in */
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+
+/* Hero content animation */
+.hero-content {
+   position: relative;
+   z-index: 2;
+   animation: fadeInUp 1.5s ease-out;
+}
+
+/* Floating animation for hero image */
+.hero-img {
+   border-radius: 50%;
+   width: 170px;
+   height: 170px;
+   border: 4px solid #3b82f6;
+   object-fit: cover;
+   animation: float 6s ease-in-out infinite, fadeIn 2s ease-in-out;
+}
+
+@keyframes float {
+   0% {
+      transform: translateY(0px);
+   }
+   50% {
+      transform: translateY(-15px);
+   }
+   100% {
+      transform: translateY(0px);
+   }
+}
+
+/* Fade in up */
+@keyframes fadeInUp {
+   0% {
+      opacity: 0;
+      transform: translateY(30px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+/* Fade in */
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+
 .hero-content {
    position: relative;
    z-index: 2;
@@ -883,4 +985,135 @@ footer {
    border-color: #3b82f6;
    color: #3b82f6;
    background: rgba(59,130,246,0.05);
+}
+
+/* CV SECTION - make it always visible with card style */
+.cv-section {
+   background: #f8fafc;
+   padding: 60px 0;
+   position: relative;
+   overflow: visible;
+}
+
+.cv-section .section-title {
+   font-size: 2.2rem;
+   font-weight: 700;
+   color: #0f172a;
+   margin-bottom: 20px;
+   position: relative;
+   display: inline-block;
+}
+
+.cv-section .section-title::after {
+   content: '';
+   position: absolute;
+   bottom: -10px;
+   left: 0;
+   width: 60px;
+   height: 4px;
+   background: #3b82f6;
+   border-radius: 2px;
+}
+
+.cv-section .section-subtitle {
+   color: #64748b;
+   max-width: 600px;
+   margin: 0 auto 30px;
+   font-size: 1.1rem;
+   line-height: 1.7;
+   text-align: center;
+}
+
+.cv-card-container {
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+.cv-card {
+   background: white;
+   border-radius: 16px;
+   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+   padding: 30px;
+   border: 1px solid rgba(0,0,0,0.03);
+   transition: all 0.3s ease;
+   text-align: center;
+}
+
+.cv-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+   border-color: rgba(59,130,246,0.15);
+}
+
+.cv-card img {
+   width: 120px;
+   height: 120px;
+   object-fit: cover;
+   border-radius: 50%;
+   border: 4px solid #3b82f6;
+   margin: 0 auto 20px;
+   transition: all 0.4s ease;
+}
+
+.cv-card:hover img {
+   transform: scale(1.05);
+}
+
+.cv-card h3 {
+   font-size: 1.8rem;
+   font-weight: 700;
+   color: #0f172a;
+   margin-bottom: 10px;
+}
+
+.cv-card p {
+   color: #64748b;
+   font-size: 1rem;
+   line-height: 1.6;
+   margin-bottom: 25px;
+}
+
+.cv-card .btn {
+   margin: 10px;
+   padding: 12px 28px;
+   font-size: 0.95rem;
+   font-weight: 600;
+   border-radius: 50px;
+   transition: all 0.3s ease;
+   letter-spacing: -0.5px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+}
+
+.cv-card .btn-primary {
+   background: #3b82f6;
+   color: white;
+   border: none;
+}
+
+.cv-card .btn-primary:hover {
+   background: #2563eb;
+   transform: translateY(-2px);
+   box-shadow: 0 5px 15px rgba(59,130,246,0.4);
+}
+
+.cv-card .btn-outline {
+   background: transparent;
+   color: #3b82f6;
+   border: 2px solid #3b82f6;
+}
+
+.cv-card .btn-outline:hover {
+   background: #3b82f6;
+   color: white;
+   transform: translateY(-2px);
+   box-shadow: 0 5px 15px rgba(59,130,246,0.4);
+}
+
+/* Animated Background Shapes - keep them subtle */
+.cv-shape {
+   background: #3b82f6;
+   opacity: 0.1;
 }
