@@ -1,43 +1,7 @@
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
+import { useRef } from 'react'
 
 export default function Hero() {
   const heroRef = useRef(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.hero-img-wrapper', {
-        opacity: 0,
-        scale: 0.6,
-        duration: 1,
-        ease: 'power3.out',
-      })
-      gsap.from('.hero-tagline', {
-        opacity: 0,
-        y: 30,
-        duration: 0.7,
-        ease: 'power3.out',
-      })
-      gsap.from('.hero-grid-item', {
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power3.out',
-        delay: 0.2,
-      })
-      gsap.from('.hero-actions a', {
-        opacity: 0,
-        y: 20,
-        duration: 0.5,
-        stagger: 0.08,
-        delay: 0.6,
-        ease: 'power2.out',
-      })
-    }, heroRef)
-
-    return () => ctx.revert()
-  }, [])
 
   return (
     <header id="home" className="hero position-relative" ref={heroRef}>
