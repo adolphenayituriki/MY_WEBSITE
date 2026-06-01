@@ -57,24 +57,6 @@ const images = [
     caption: 'Kainafresh e-commerce website',
     description: 'Building an e-commerce platform for Kainafresh to enable seamless online ordering and delivery of fresh produce.',
   },
-  {
-    src: '/garelly/work/umuganda.png',
-    category: 'Work',
-    caption: 'Umuganda community work',
-    description: 'Participating in Umuganda, a monthly community clean-up and development activity that brings Rwandans together to contribute to their neighborhoods.',
-  },
-  {
-    src: '/garelly/work/computer support.png',
-    category: 'Work',
-    caption: 'Computer support & IT assistance',
-    description: 'Providing hands-on computer support and IT assistance, helping individuals and organizations resolve technical issues efficiently.',
-  },
-  {
-    src: '/garelly/work/Digital tracking for health transparency .png',
-    category: 'Work',
-    caption: 'Digital tracking for health transparency',
-    description: 'Working on a digital tracking solution to improve transparency and accountability in the health sector.',
-  },
 ]
 
 export default function Gallery() {
