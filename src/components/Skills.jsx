@@ -24,6 +24,16 @@ const skillCategories = [
       { name: 'CapCut / Filmora', level: 75 },
     ],
   },
+  {
+    title: 'Professional Skills',
+    skills: [
+      { name: 'Product Management', level: 80 },
+      { name: 'Online Marketing', level: 75 },
+      { name: 'Teaching & Training', level: 90 },
+      { name: 'System Design', level: 75 },
+      { name: 'UI/UX Design', level: 65 },
+    ],
+  },
 ]
 
 export default function Skills() {

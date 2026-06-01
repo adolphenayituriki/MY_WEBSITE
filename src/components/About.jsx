@@ -47,6 +47,12 @@ export default function About() {
               <div className="highlight-item">
                 <i className="fas fa-lightbulb"></i> Digital Innovation
               </div>
+              <div className="highlight-item">
+                <i className="fas fa-chart-line"></i> Product Management
+              </div>
+              <div className="highlight-item">
+                <i className="fas fa-video"></i> Multimedia
+              </div>
             </div>
 
             <a href="mailto:www.nayituriki.com@gmail.com" className="btn-accent">
