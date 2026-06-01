@@ -1,12 +1,16 @@
 import { useRef } from 'react'
+import { getData } from '../admin/dataStore.js'
 
 export default function Hero() {
   const heroRef = useRef(null)
+  const { hero } = getData()
+
+  const badgeIcons = ['fa-code', 'fa-diagram-project', 'fa-chalkboard-user', 'fa-lightbulb']
 
   return (
     <header id="home" className="hero position-relative" ref={heroRef}>
       <div className="hero-bg">
-        <img src="/garelly/Rwanda ICT Chamber May 2026 MindSpace mental health project presentation at KLab for compreting 6 Month of professional internship as backend Developer (2).jpg" alt="" />
+        <img src={hero.bgImage} alt="" />
         <div className="hero-bg-overlay"></div>
       </div>
       <div className="hero-grid"></div>
@@ -26,24 +30,14 @@ export default function Hero() {
             className="hero-img"
           />
         </div>
-        <p className="hero-tagline">Turning Ideas Into Digital Reality</p>
+        <p className="hero-tagline">{hero.tagline}</p>
         <div className="hero-grid-badges">
-          <div className="hero-grid-item">
-            <div className="hero-grid-icon"><i className="fa-solid fa-code"></i></div>
-            <span>Full-Stack Developer</span>
-          </div>
-          <div className="hero-grid-item">
-            <div className="hero-grid-icon"><i className="fa-solid fa-diagram-project"></i></div>
-            <span>System Designer</span>
-          </div>
-          <div className="hero-grid-item">
-            <div className="hero-grid-icon"><i className="fa-solid fa-chalkboard-user"></i></div>
-            <span>ICT Trainer</span>
-          </div>
-          <div className="hero-grid-item">
-            <div className="hero-grid-icon"><i className="fa-solid fa-lightbulb"></i></div>
-            <span>Digital Innovator</span>
-          </div>
+          {hero.badges.map((badge, i) => (
+            <div className="hero-grid-item" key={i}>
+              <div className="hero-grid-icon"><i className={`fa-solid ${badgeIcons[i] || 'fa-star'}`}></i></div>
+              <span>{badge}</span>
+            </div>
+          ))}
         </div>
         <div className="hero-actions">
           <a href="#projects" className="btn-hero btn-hero-primary">

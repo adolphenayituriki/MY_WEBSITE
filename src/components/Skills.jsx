@@ -1,52 +1,21 @@
 import { useEffect, useRef, useState } from 'react'
+import { getData } from '../admin/dataStore.js'
 
-const skillCategories = [
-  {
-    title: 'Programming Languages',
-    skills: [
-      { name: 'HTML5/CSS3', level: 95 },
-      { name: 'JavaScript', level: 85 },
-      { name: 'PHP & MySQL', level: 80 },
-      { name: 'Java', level: 65 },
-      { name: 'React', level: 55 },
-      { name: 'Node.js', level: 55 },
-      { name: 'Bootstrap', level: 90 },
-    ],
-  },
-  {
-    title: 'Tools & Platforms',
-    skills: [
-      { name: 'WordPress', level: 95 },
-      { name: 'Photoshop', level: 70 },
-      { name: 'Canva', level: 95 },
-      { name: 'Google Suites', level: 90 },
-      { name: 'MS Office', level: 95 },
-      { name: 'CapCut / Filmora', level: 75 },
-    ],
-  },
-  {
-    title: 'Professional Skills',
-    skills: [
-      { name: 'Product Management', level: 80 },
-      { name: 'Online Marketing', level: 75 },
-      { name: 'Teaching & Training', level: 90 },
-      { name: 'System Design', level: 75 },
-      { name: 'UI/UX Design', level: 65 },
-    ],
-  },
+const gradients = [
+  'linear-gradient(135deg, #2563eb, #7c3aed)',
+  'linear-gradient(135deg, #10b981, #059669)',
+  'linear-gradient(135deg, #FFCE08, #E5B800)',
 ]
 
 export default function Skills() {
+  const { skills: skillCategories } = getData()
   const [visible, setVisible] = useState(false)
   const ref = useRef(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-          observer.disconnect()
-        }
+        if (entry.isIntersecting) { setVisible(true); observer.disconnect() }
       },
       { threshold: 0.2 }
     )
@@ -57,12 +26,8 @@ export default function Skills() {
   return (
     <section id="skills" ref={ref}>
       <div className="container">
-        <h2 className="section-title text-center" style={{ display: 'block', textAlign: 'center' }}>
-          Technical Skills
-        </h2>
-        <p className="section-subtitle text-center">
-          Technologies and tools I work with daily
-        </p>
+        <h2 className="section-title text-center" style={{ display: 'block', textAlign: 'center' }}>Technical Skills</h2>
+        <p className="section-subtitle text-center">Technologies and tools I work with daily</p>
         <div className="row justify-content-center">
           <div className="col-md-10">
             <div className="row g-4">
@@ -71,7 +36,7 @@ export default function Skills() {
                   <div className="skill-category">
                     <h3>{cat.title}</h3>
                     <div className="skill-bar-group">
-                      {cat.skills.map((skill, j) => (
+                      {(cat.skills || []).map((skill, j) => (
                         <div className="skill-bar-item" key={j}>
                           <div className="skill-bar-header">
                             <span>{skill.name}</span>
@@ -82,9 +47,7 @@ export default function Skills() {
                               className={`skill-bar-fill${visible ? ' animated' : ''}`}
                               style={{
                                 width: visible ? `${skill.level}%` : '0%',
-                                background: i === 0
-                                  ? 'linear-gradient(135deg, #2563eb, #7c3aed)'
-                                  : 'linear-gradient(135deg, #10b981, #059669)',
+                                background: gradients[i % gradients.length],
                               }}
                             />
                           </div>

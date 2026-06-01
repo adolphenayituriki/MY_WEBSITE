@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { getData, saveData, exportData, importData, resetData, defaults } from './dataStore.js'
 
 const ADMIN_PASSWORD = 'adolphe@078'
@@ -145,12 +145,49 @@ function TextInput({ label, value, onChange, multiline }) {
 }
 
 function ImageField({ label, value, onChange }) {
+  const fileRef = useRef(null)
+
+  const handleFile = (e) => {
+    const file = e.target.files[0]
+    if (!file) return
+    const reader = new FileReader()
+    reader.onload = (ev) => {
+      onChange({ target: { value: ev.target.result } })
+    }
+    reader.readAsDataURL(file)
+    e.target.value = ''
+  }
+
+  const handleClear = () => {
+    onChange({ target: { value: '' } })
+  }
+
   return (
     <div className="admin-field">
       <label>{label}</label>
       <div className="admin-image-picker">
-        <input type="text" value={value || ''} onChange={onChange} placeholder="/images/..." />
-        {value && <img src={value} alt="" onError={(e) => e.target.style.opacity = '0.3'} />}
+        <div className="admin-image-input-row">
+          <input type="text" value={value || ''} onChange={onChange} placeholder="/images/... or click Upload" />
+          <button className="admin-btn-upload" onClick={() => fileRef.current.click()} title="Upload from PC">
+            <i className="fa-solid fa-cloud-arrow-up"></i>
+          </button>
+          {value && !value.startsWith('data:') && (
+            <button className="admin-btn-clear" onClick={handleClear} title="Clear">
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+          )}
+        </div>
+        <input type="file" ref={fileRef} accept="image/*" onChange={handleFile} style={{ display: 'none' }} />
+        {value && (
+          <div className="admin-image-preview">
+            <img src={value} alt="" onError={(e) => { e.target.style.display = 'none' }} />
+            {value.startsWith('data:') && (
+              <button className="admin-btn-clear" onClick={handleClear} title="Remove image">
+                <i className="fa-solid fa-trash-can"></i> Remove
+              </button>
+            )}
+          </div>
+        )}
       </div>
     </div>
   )

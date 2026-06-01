@@ -103,7 +103,6 @@ export default function Navbar() {
                 onClick={(e) => { e.preventDefault(); setAboutOpen(!aboutOpen) }}
                 id="aboutDropdown"
                 role="button"
-                data-bs-toggle="dropdown"
                 aria-expanded={aboutOpen}
               >
                 About

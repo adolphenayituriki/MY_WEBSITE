@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
+import { getData } from '../admin/dataStore.js'
 
 export default function Footer() {
   const [year, setYear] = useState('')
   const [showTop, setShowTop] = useState(false)
+  const { contact } = getData()
 
   useEffect(() => {
     setYear(new Date().getFullYear().toString())
@@ -11,9 +13,7 @@ export default function Footer() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
   return (
     <footer>
@@ -26,26 +26,14 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <h3>NAYITURIKI <span>Adolphe</span></h3>
-            <p>
-              Full-Stack Developer & System Designer building innovative digital
-              solutions that empower communities and drive technological advancement.
-            </p>
+            <p>Full-Stack Developer & System Designer building innovative digital solutions that empower communities and drive technological advancement.</p>
             <div className="footer-social">
-              <a href="https://github.com/adolphenayituriki" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <i className="fab fa-github"></i>
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://www.instagram.com/adolphenayituriki/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="http://www.youtube.com/@Kiliziya-vibes" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                <i className="fab fa-youtube"></i>
-              </a>
+              <a href={`https://${contact.github}`} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i className="fab fa-github"></i></a>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/adolphenayituriki/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+              <a href="http://www.youtube.com/@Kiliziya-vibes" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i className="fab fa-youtube"></i></a>
             </div>
           </div>
-
           <div className="footer-links">
             <h4>Quick Links</h4>
             <ul>
@@ -56,41 +44,22 @@ export default function Footer() {
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-
           <div className="footer-contact">
             <h4>Contact</h4>
             <ul>
-              <li>
-                <i className="fa-regular fa-envelope"></i>
-                <a href="mailto:www.nayituriki.com@gmail.com">www.nayituriki.com@gmail.com</a>
-              </li>
-              <li>
-                <i className="fa-solid fa-phone"></i>
-                <a href="tel:+250780505948">+250 780 505 948</a>
-              </li>
-              <li>
-                <i className="fa-solid fa-location-dot"></i>
-                Kigali, Rwanda
-              </li>
-              <li>
-                <i className="fa-solid fa-globe"></i>
-                <a href="https://adolpheict.vercel.app" target="_blank" rel="noopener noreferrer">adolpheict.vercel.app</a>
-              </li>
+              <li><i className="fa-regular fa-envelope"></i><a href={`mailto:${contact.email}`}>{contact.email}</a></li>
+              <li><i className="fa-solid fa-phone"></i><a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a></li>
+              <li><i className="fa-solid fa-location-dot"></i>{contact.location}</li>
+              <li><i className="fa-solid fa-globe"></i><a href={`https://${contact.website}`} target="_blank" rel="noopener noreferrer">{contact.website}</a></li>
             </ul>
           </div>
         </div>
-
         <div className="footer-bottom">
           <div className="footer-divider"></div>
           <p>&copy; {year} Nayituriki Adolphe &mdash; Kigali, Rwanda. All rights reserved.</p>
         </div>
       </div>
-
-      <button
-        className={`back-to-top${showTop ? ' show' : ''}`}
-        onClick={scrollToTop}
-        aria-label="Back to top"
-      >
+      <button className={`back-to-top${showTop ? ' show' : ''}`} onClick={scrollToTop} aria-label="Back to top">
         <i className="fa-solid fa-arrow-up"></i>
       </button>
     </footer>

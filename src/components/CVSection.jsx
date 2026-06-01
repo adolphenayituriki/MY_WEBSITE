@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { getData } from '../admin/dataStore.js'
 
 export default function CVSection() {
+  const { cv } = getData()
   const [showModal, setShowModal] = useState(false)
 
   return (
@@ -10,44 +12,26 @@ export default function CVSection() {
         <p className="section-subtitle">
           Discover my experience, skills, and achievements in detail
         </p>
-
         <div className="cv-card">
-          <img
-            src="/images/Portrait of a Young Man.jpg"
-            alt="Nayituriki Adolphe"
-          />
-          <h3>Nayituriki Adolphe</h3>
-          <p className="cv-role">Full Stack Developer &bull; System Designer &bull; ICT Trainer</p>
+          <img src={cv.image} alt={cv.name} />
+          <h3>{cv.name}</h3>
+          <p className="cv-role">{cv.role}</p>
           <p className="cv-desc">
-            <i className="fa-solid fa-envelope" style={{ marginRight: 6 }}></i> www.nayituriki.com@gmail.com &nbsp;&nbsp;
-            <i className="fa-solid fa-phone" style={{ marginRight: 6 }}></i> +250 780 505 948 &nbsp;&nbsp;
-            <i className="fa-solid fa-location-dot" style={{ marginRight: 6 }}></i> Kigali, Rwanda
+            <i className="fa-solid fa-envelope" style={{ marginRight: 6 }}></i> {cv.contact.email} &nbsp;&nbsp;
+            <i className="fa-solid fa-phone" style={{ marginRight: 6 }}></i> {cv.contact.phone} &nbsp;&nbsp;
+            <i className="fa-solid fa-location-dot" style={{ marginRight: 6 }}></i> {cv.contact.location}
             <br />
-            <i className="fa-solid fa-globe" style={{ marginRight: 6 }}></i> adolpheict.vercel.app &nbsp;&nbsp;
-            <i className="fab fa-github" style={{ marginRight: 6 }}></i> github.com/adolphenayituriki
+            <i className="fa-solid fa-globe" style={{ marginRight: 6 }}></i> {cv.contact.website} &nbsp;&nbsp;
+            <i className="fab fa-github" style={{ marginRight: 6 }}></i> {cv.contact.github}
           </p>
           <div className="cv-actions">
-            <button
-              className="btn-gradient"
-              onClick={() => setShowModal(true)}
-              style={{ border: 'none', cursor: 'pointer' }}
-            >
+            <button className="btn-gradient" onClick={() => setShowModal(true)} style={{ border: 'none', cursor: 'pointer' }}>
               <i className="fa-solid fa-file-lines"></i> Full CV
             </button>
-            <a
-              href="/files/NAYITURIKI_ADOLPHE_FlowCV_Resume_2026-05-18.pdf"
-              target="_blank"
-              className="btn-outline-light-custom"
-              style={{ color: '#2563eb', borderColor: '#2563eb' }}
-            >
+            <a href={cv.pdfUrl} target="_blank" className="btn-outline-light-custom" style={{ color: '#2563eb', borderColor: '#2563eb' }}>
               <i className="fa-solid fa-eye"></i> View PDF
             </a>
-            <a
-              href="/files/NAYITURIKI_ADOLPHE_FlowCV_Resume_2026-05-18.pdf"
-              download
-              className="btn-outline-light-custom"
-              style={{ color: '#2563eb', borderColor: '#2563eb' }}
-            >
+            <a href={cv.pdfUrl} download className="btn-outline-light-custom" style={{ color: '#2563eb', borderColor: '#2563eb' }}>
               <i className="fa-solid fa-download"></i> Download
             </a>
           </div>
@@ -58,25 +42,22 @@ export default function CVSection() {
         <div className="cv-modal-overlay" onClick={() => setShowModal(false)}>
           <div className="cv-modal" onClick={(e) => e.stopPropagation()}>
             <button className="cv-modal-close" onClick={() => setShowModal(false)}>&times;</button>
-
             <div className="cv-modal-header">
-              <img src="/images/Portrait of a Young Man.jpg" alt="Nayituriki Adolphe" />
+              <img src={cv.image} alt={cv.name} />
               <div>
-                <h3>Nayituriki Adolphe</h3>
-                <p>Full Stack Developer &bull; System Designer &bull; ICT Trainer</p>
+                <h3>{cv.name}</h3>
+                <p>{cv.role}</p>
                 <p className="cv-modal-contact">
-                  www.nayituriki.com@gmail.com &nbsp;|&nbsp; +250 780 505 948 &nbsp;|&nbsp; Kigali, Rwanda<br/>
-                  adolpheict.vercel.app &nbsp;|&nbsp; github.com/adolphenayituriki
+                  {cv.contact.email} &nbsp;|&nbsp; {cv.contact.phone} &nbsp;|&nbsp; {cv.contact.location}<br/>
+                  {cv.contact.website} &nbsp;|&nbsp; {cv.contact.github}
                 </p>
               </div>
             </div>
-
             <div className="cv-modal-body">
               <div className="cv-modal-section">
                 <h4><i className="fa-solid fa-circle-info"></i> Personal Statement</h4>
                 <p>A highly motivated student at the University of Rwanda, pursuing a Bachelor's in Business Information Technology (BIT Level 3). I'm passionate about using technology and innovation to solve real-world problems and create digital solutions that make life easier. Skilled in web development, Microsoft Offices, Google Tools, Graphic design and teamwork, I bring creativity, discipline, and a results-driven mindset to every project I take on. My goal is to grow into a leading professional who bridges technology with impact.</p>
               </div>
-
               <div className="cv-modal-section">
                 <h4><i className="fa-solid fa-briefcase"></i> Experience</h4>
                 <div className="cv-modal-item">
@@ -98,7 +79,6 @@ export default function CVSection() {
                   <p className="cv-modal-item-sub">Teaching MS Offices, Google Suites, Fluent Touch typing, Photoshop (Intermediate), Full Canva design, and Software Programming fundamentals</p>
                 </div>
               </div>
-
               <div className="cv-modal-section">
                 <h4><i className="fa-solid fa-graduation-cap"></i> Education</h4>
                 <div className="cv-modal-item">
@@ -110,7 +90,6 @@ export default function CVSection() {
                   <p className="cv-modal-item-sub">G.S N.D.B.C KINYABABA &mdash; GPA: 57/60 &mdash; Mathematics, Economics &amp; Geography</p>
                 </div>
               </div>
-
               <div className="cv-modal-section">
                 <h4><i className="fa-solid fa-code"></i> Skills</h4>
                 <div className="cv-modal-skills">
@@ -122,7 +101,6 @@ export default function CVSection() {
                   <span><strong>Teaching:</strong> All above computer skills, training and mentoring</span>
                 </div>
               </div>
-
               <div className="cv-modal-section">
                 <h4><i className="fa-solid fa-trophy"></i> Awards &amp; Certificates</h4>
                 <div className="cv-modal-item">
@@ -142,7 +120,6 @@ export default function CVSection() {
                   <p className="cv-modal-item-sub">ALX Rwanda — AI Augmented Professional Development Skills</p>
                 </div>
               </div>
-
               <div className="cv-modal-section">
                 <h4><i className="fa-solid fa-diagram-project"></i> Projects</h4>
                 <div className="cv-modal-item">
@@ -158,24 +135,20 @@ export default function CVSection() {
                   <p className="cv-modal-item-sub">Attendance &amp; fines tracking with notification system and payment integration — <a href="https://umuganda.netlify.app/" target="_blank" rel="noopener noreferrer">umuganda.netlify.app</a></p>
                 </div>
               </div>
-
               <div className="cv-modal-section">
                 <h4><i className="fa-solid fa-language"></i> Languages</h4>
                 <p><strong>English</strong> — Fluent &nbsp;|&nbsp; <strong>French</strong> — Basic &nbsp;|&nbsp; <strong>Kinyarwanda</strong> — Native</p>
               </div>
-
               <div className="cv-modal-section">
                 <h4><i className="fa-solid fa-heart"></i> Interests</h4>
                 <p>Video &amp; Photo Editing, designing banners and flyers, YouTube tutoring, playing piano and guitar</p>
               </div>
-
               <div className="cv-modal-section">
                 <h4><i className="fa-solid fa-address-book"></i> References</h4>
                 <p><strong>Nyiransengimana Clementine</strong> — Teacher of ICT, G.S N.D.B.C KINYABABA — +250 724 728 747</p>
                 <p><strong>Niyitegeka Valens</strong> — Employee, Equity Bank Kinyinya/Batsinda — +250 781 548 206</p>
                 <p><strong>Niyonzima Jean Deudieu</strong> — Teacher of Entrepreneurship, G.S N.D.B.C KINYABABA — +250 783 877 449</p>
               </div>
-
               <p className="cv-modal-declaration">I hereby declare that the information provided in this CV is true and correct to the best of my knowledge and belief. I take full responsibility for the accuracy and authenticity of the details mentioned above.<br/><em>— Nayituriki Adolphe, Butare, 29 October 2025</em></p>
             </div>
           </div>
