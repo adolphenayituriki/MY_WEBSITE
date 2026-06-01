@@ -147,7 +147,7 @@ export default function CVSection() {
                 <h4><i className="fa-solid fa-diagram-project"></i> Projects</h4>
                 <div className="cv-modal-item">
                   <div className="cv-modal-item-header"><strong>Kaina Fresh LTD Website</strong><span>02/2026 – 04/2026</span></div>
-                  <p className="cv-modal-item-sub">E-commerce website for browsing products and placing orders</p>
+                  <p className="cv-modal-item-sub">E-commerce website for browsing products and placing orders — <a href="https://kainafresh.rw" target="_blank" rel="noopener noreferrer">kainafresh.rw</a></p>
                 </div>
                 <div className="cv-modal-item">
                   <div className="cv-modal-item-header"><strong>Rwandan Citizens Engagement System</strong></div>
