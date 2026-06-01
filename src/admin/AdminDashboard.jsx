@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { getData, saveData, exportData, importData, resetData, defaults } from './dataStore.js'
 
 const ADMIN_PASSWORD = 'adolphe@078'
@@ -16,7 +16,7 @@ const sections = [
 ]
 
 export default function AdminDashboard() {
-  const [authed, setAuthed] = useState(false)
+  const [authed, setAuthed] = useState(() => !!sessionStorage.getItem('admin_authed'))
   const [password, setPassword] = useState('')
   const [activeSection, setActiveSection] = useState('hero')
   const [data, setData] = useState(() => getData())
