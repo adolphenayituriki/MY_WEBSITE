@@ -5,6 +5,7 @@ export default function Navbar() {
   const [collapsed, setCollapsed] = useState(true)
   const [active, setActive] = useState('home')
   const [dark, setDark] = useState(() => localStorage.getItem('theme') === 'dark')
+  const [aboutOpen, setAboutOpen] = useState(false)
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
@@ -19,11 +20,12 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => {
-      const sections = ['home', 'services', 'projects', 'cv', 'about', 'skills', 'certifications', 'get-started', 'contact']
+      const sections = ['home', 'services', 'projects', 'cv', 'about', 'gallery', 'skills', 'certifications', 'get-started', 'contact']
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i])
         if (el && el.getBoundingClientRect().top <= 120) {
-          setActive(sections[i])
+          if (sections[i] === 'gallery') setActive('about')
+          else setActive(sections[i])
           break
         }
       }
@@ -34,6 +36,7 @@ export default function Navbar() {
 
   const scrollTo = (id) => {
     setCollapsed(true)
+    setAboutOpen(false)
     const el = document.getElementById(id)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
@@ -43,10 +46,6 @@ export default function Navbar() {
     { id: 'services', label: 'Services' },
     { id: 'projects', label: 'Projects' },
     { id: 'cv', label: 'CV' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'certifications', label: 'Certifications' },
-    { id: 'contact', label: 'Contact' },
   ]
 
   return (
@@ -94,6 +93,53 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
+            <li className={`nav-item dropdown${aboutOpen ? ' show' : ''}`}
+              onMouseEnter={() => setAboutOpen(true)}
+              onMouseLeave={() => setAboutOpen(false)}
+            >
+              <a
+                className={`nav-link dropdown-toggle${active === 'about' ? ' active' : ''}`}
+                href="#about"
+                onClick={(e) => { e.preventDefault(); scrollTo('about') }}
+                id="aboutDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded={aboutOpen}
+              >
+                About
+              </a>
+              <ul className={`dropdown-menu${aboutOpen ? ' show' : ''}`} aria-labelledby="aboutDropdown">
+                <li><a className="dropdown-item" href="#about" onClick={(e) => { e.preventDefault(); scrollTo('about') }}>About Me</a></li>
+                <li><a className="dropdown-item" href="#gallery" onClick={(e) => { e.preventDefault(); scrollTo('gallery') }}>Gallery</a></li>
+              </ul>
+            </li>
+            <li className="nav-item" key="skills">
+              <a
+                className={`nav-link${active === 'skills' ? ' active' : ''}`}
+                href="#skills"
+                onClick={(e) => { e.preventDefault(); scrollTo('skills') }}
+              >
+                Skills
+              </a>
+            </li>
+            <li className="nav-item" key="certifications">
+              <a
+                className={`nav-link${active === 'certifications' ? ' active' : ''}`}
+                href="#certifications"
+                onClick={(e) => { e.preventDefault(); scrollTo('certifications') }}
+              >
+                Certifications
+              </a>
+            </li>
+            <li className="nav-item" key="contact">
+              <a
+                className={`nav-link${active === 'contact' ? ' active' : ''}`}
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); scrollTo('contact') }}
+              >
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
       </div>
