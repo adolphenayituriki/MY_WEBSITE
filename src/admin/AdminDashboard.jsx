@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react'
-import { getData, saveData, exportData, importData, resetData, defaults } from './dataStore.js'
+import { useState, useRef } from 'react'
+import { getData, saveData, exportData, importData, resetData, publishToGitHub, defaults } from './dataStore.js'
 
 const ADMIN_PASSWORD = 'adolphe@078'
 
@@ -23,6 +23,11 @@ export default function AdminDashboard() {
   const [saved, setSaved] = useState(false)
   const [importText, setImportText] = useState('')
   const [showImport, setShowImport] = useState(false)
+  const [showPublish, setShowPublish] = useState(false)
+  const [pubToken, setPubToken] = useState(() => sessionStorage.getItem('gh_token') || '')
+  const [pubMessage, setPubMessage] = useState('Update site data from admin dashboard')
+  const [pubStatus, setPubStatus] = useState('')
+  const [pubError, setPubError] = useState('')
 
   const login = () => {
     if (password === ADMIN_PASSWORD) setAuthed(true)
@@ -64,6 +69,24 @@ export default function AdminDashboard() {
     }
   }
 
+  const handlePublish = async () => {
+    if (!pubToken) { setPubError('Enter a GitHub token'); return }
+    const owner = 'adolphenayituriki'
+    const repo = 'MY_WEBSITE'
+    setPubStatus('publishing')
+    setPubError('')
+    try {
+      sessionStorage.setItem('gh_token', pubToken)
+      handleSave()
+      await publishToGitHub(data, pubToken, owner, repo, pubMessage)
+      setPubStatus('success')
+      setTimeout(() => { setShowPublish(false); setPubStatus('') }, 2000)
+    } catch (err) {
+      setPubError(err.message)
+      setPubStatus('')
+    }
+  }
+
   if (!authed) {
     return (
       <div className="admin-login">
@@ -90,6 +113,7 @@ export default function AdminDashboard() {
         <div className="admin-sidebar-actions">
           <button className="admin-btn-sm" onClick={exportData}><i className="fa-solid fa-download"></i> Export</button>
           <button className="admin-btn-sm" onClick={() => setShowImport(!showImport)}><i className="fa-solid fa-upload"></i> Import</button>
+          <button className="admin-btn-sm admin-btn-publish" onClick={() => setShowPublish(true)}><i className="fa-solid fa-rocket"></i> Publish</button>
           <a href="/" className="admin-btn-sm" target="_blank"><i className="fa-solid fa-eye"></i> View Site</a>
         </div>
       </aside>
@@ -127,6 +151,45 @@ export default function AdminDashboard() {
             <button className="admin-btn admin-btn-danger" onClick={handleReset}><i className="fa-solid fa-rotate-left"></i> Reset to Defaults</button>
           </div>
         </div>
+
+        {showPublish && (
+          <div className="admin-publish-overlay" onClick={() => { if (pubStatus !== 'publishing') { setShowPublish(false); setPubError('') } }}>
+            <div className="admin-publish-modal" onClick={(e) => e.stopPropagation()}>
+              <button className="admin-publish-close" onClick={() => { setShowPublish(false); setPubError('') }} disabled={pubStatus === 'publishing'}>&times;</button>
+              <h3><i className="fa-solid fa-rocket"></i> Publish to GitHub</h3>
+              <p className="admin-publish-desc">Commits current data to <code>src/data.json</code> in your repo. Vercel will auto-deploy.</p>
+
+              <div className="admin-field">
+                <label>GitHub Personal Access Token</label>
+                <input type="password" value={pubToken} onChange={(e) => setPubToken(e.target.value)} placeholder="ghp_..." disabled={pubStatus === 'publishing'} />
+                <p className="admin-hint">Create at <a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreferrer">github.com/settings/tokens</a> with <code>repo</code> scope.</p>
+              </div>
+
+              <div className="admin-field">
+                <label>Commit Message</label>
+                <input type="text" value={pubMessage} onChange={(e) => setPubMessage(e.target.value)} disabled={pubStatus === 'publishing'} />
+              </div>
+
+              <div className="admin-publish-info">
+                <i className="fa-solid fa-code-branch"></i>
+                <span>adolphenayituriki/MY_WEBSITE</span>
+              </div>
+
+              {pubError && <p className="admin-publish-error"><i className="fa-solid fa-circle-exclamation"></i> {pubError}</p>}
+
+              {pubStatus === 'success' && (
+                <p className="admin-publish-success"><i className="fa-solid fa-check-circle"></i> Published! Vercel will deploy shortly.</p>
+              )}
+
+              <div className="admin-publish-actions">
+                <button className="admin-btn" onClick={handlePublish} disabled={pubStatus === 'publishing'}>
+                  {pubStatus === 'publishing' ? <><i className="fa-solid fa-spinner fa-spin"></i> Publishing...</> : <><i className="fa-solid fa-cloud-arrow-up"></i> Publish Now</>}
+                </button>
+                <button className="admin-btn admin-btn-secondary" onClick={() => { setShowPublish(false); setPubError('') }} disabled={pubStatus === 'publishing'}>Cancel</button>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   )

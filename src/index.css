@@ -3577,6 +3577,117 @@ footer {
   box-sizing: border-box;
 }
 
+/* ─── Publish Modal ─── */
+
+.admin-btn-publish {
+  background: rgba(255,206,8,0.12) !important;
+  color: #FFCE08 !important;
+  border: 1px solid rgba(255,206,8,0.2) !important;
+}
+
+.admin-btn-publish:hover {
+  background: #FFCE08 !important;
+  color: #121212 !important;
+}
+
+.admin-publish-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  backdrop-filter: blur(4px);
+}
+
+.admin-publish-modal {
+  background: #12121a;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 32px;
+  width: 480px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.admin-publish-close {
+  position: absolute;
+  top: 12px; right: 16px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.admin-publish-close:hover {
+  background: rgba(255,255,255,0.06);
+  color: #f1f5f9;
+}
+
+.admin-publish-modal h3 {
+  font-size: 1.2rem;
+  color: #f1f5f9;
+  margin: 0 0 8px 0;
+}
+
+.admin-publish-desc {
+  font-size: 0.84rem;
+  color: #94a3b8;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.admin-publish-desc code {
+  color: #FFCE08;
+  background: rgba(255,206,8,0.1);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
+
+.admin-publish-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(255,206,8,0.06);
+  border: 1px solid rgba(255,206,8,0.15);
+  border-radius: 8px;
+  color: #FFCE08;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.admin-publish-error {
+  color: #ef4444;
+  font-size: 0.84rem;
+  padding: 8px 12px;
+  background: rgba(239,68,68,0.1);
+  border-radius: 8px;
+  margin: 0 0 12px 0;
+}
+
+.admin-publish-success {
+  color: #10b981;
+  font-size: 0.84rem;
+  padding: 8px 12px;
+  background: rgba(16,185,129,0.1);
+  border-radius: 8px;
+  margin: 0 0 12px 0;
+}
+
+.admin-publish-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
 @media (max-width: 768px) {
   .admin-dashboard {
     flex-direction: column;
