@@ -25,6 +25,12 @@ const certs = [
     downloadUrl: '/files/DTP Product Management Advanced certificate.pdf',
     label: 'DTP Product Management Advanced',
   },
+  {
+    img: null,
+    viewUrl: '#',
+    downloadUrl: '#',
+    label: 'DTS-Appreciation certificate as DTS Trainer at Huye campus',
+  },
 ]
 
 export default function Certifications() {
@@ -46,15 +52,22 @@ export default function Certifications() {
           {certs.map((c, i) => (
             <div className="col" key={i}>
               <div className="certificate-box">
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    openModal(c.viewUrl)
-                  }}
-                >
-                  <img src={c.img} alt={c.label} />
-                </a>
+                {c.img ? (
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      openModal(c.viewUrl)
+                    }}
+                  >
+                    <img src={c.img} alt={c.label} />
+                  </a>
+                ) : (
+                  <div className="cert-placeholder">
+                    <i className="fas fa-image"></i>
+                    <span>Image pending</span>
+                  </div>
+                )}
                 <div className="cert-body">
                   <p>{c.label}</p>
                   <div className="cert-actions">

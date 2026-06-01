@@ -1648,6 +1648,29 @@ section {
   transform: scale(1.03);
 }
 
+.cert-placeholder {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--gray-100);
+  color: var(--gray-400);
+  font-size: 0.85rem;
+}
+
+[data-theme="dark"] .cert-placeholder {
+  background: #1e293b;
+  color: #475569;
+}
+
+.cert-placeholder i {
+  font-size: 2.5rem;
+  opacity: 0.6;
+}
+
 .certificate-box .cert-body {
   padding: 16px;
   flex-grow: 1;
