@@ -18,8 +18,14 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-wave">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-          <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1350,30 1440,30 L1440,60 L0,60 Z" fill="var(--dark)"></path>
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style={{ width: '100%', height: '60px', display: 'block' }}>
+          <defs>
+            <clipPath id="waveClip">
+              <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1350,30 1440,30 L1440,60 L0,60 Z"></path>
+            </clipPath>
+          </defs>
+          <image href="/garelly/Rwanda ICT Chamber May 2026 MindSpace mental health project presentation at KLab for compreting 6 Month of professional internship as backend Developer (2).jpg" clip-path="url(#waveClip)" width="1440" height="60" preserveAspectRatio="xMidYMid slice" />
+          <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1350,30 1440,30 L1440,60 L0,60 Z" fill="#EEC003" opacity="0.85"></path>
         </svg>
       </div>
       <div className="container">

@@ -2239,9 +2239,6 @@ footer {
   display: block;
 }
 
-[data-theme="dark"] .footer-wave svg path {
-  fill: #121212;
-}
 
 .footer-grid {
   display: grid;
