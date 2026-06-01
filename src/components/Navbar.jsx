@@ -100,7 +100,7 @@ export default function Navbar() {
               <a
                 className={`nav-link dropdown-toggle${active === 'about' ? ' active' : ''}`}
                 href="#about"
-                onClick={(e) => { e.preventDefault(); scrollTo('about') }}
+                onClick={(e) => { e.preventDefault(); setAboutOpen(!aboutOpen) }}
                 id="aboutDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
