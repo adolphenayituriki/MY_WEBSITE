@@ -1,72 +1,57 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
+
+const services = [
+  {
+    id: 'web',
+    title: 'Web Development & ICT Training',
+    icon: 'fa-laptop-code',
+    short: 'Build modern websites and web applications while providing comprehensive training in MS Office, Google Suites, Canva, Photoshop, and software programming fundamentals.',
+    details: [
+      'Modern, responsive websites tailored to your brand — from portfolios and business sites to full e-commerce platforms',
+      'Technologies: HTML, CSS, JavaScript, Bootstrap, React, PHP, WordPress',
+      'ICT Training: MS Office (Word, Excel, PowerPoint, Publisher, Access, Outlook), Google Suites (Docs, G-Mail, Forms, Sheets)',
+      'Design tools: Canva (full training), Photoshop (Intermediate level)',
+      'Programming fundamentals: HTML, CSS, JavaScript, PHP',
+      'Fluent Touch typing training',
+      'Recent projects: Kainafresh E-commerce, Rwanda ICT Chamber redesign, Umuganda Tracking System',
+    ],
+  },
+  {
+    id: 'system',
+    title: 'System Design & Product Management',
+    icon: 'fa-database',
+    short: 'Design and develop systems for attendance tracking, community engagement, and reporting platforms with expertise in product lifecycle management.',
+    details: [
+      'Full-stack system design and development for business and community needs',
+      'Attendance tracking and reporting platforms',
+      'Community engagement and feedback systems',
+      'Product lifecycle management from ideation to deployment',
+      'Database design and API development',
+      'Scalable architecture for growing organizations',
+    ],
+  },
+  {
+    id: 'digital',
+    title: 'Digital Literacy & Innovation',
+    icon: 'fa-headset',
+    short: 'Teach digital skills including touch typing, video/photo editing, and online marketing while driving community-based digital projects and innovation.',
+    details: [
+      'Digital skills training for individuals and organizations',
+      'Online Marketing: YouTube, TikTok, Facebook, Instagram — content strategy, audience growth, brand awareness',
+      'Video Editing: CapCut, Wondershare Filmora',
+      'Photo Editing: Photoshop (Intermediate), Canva',
+      'Video shooting, editing, and production for brands or personal projects',
+      'Community-based digital projects and innovation initiatives',
+      'YouTube tutorial content creation',
+    ],
+  },
+]
 
 export default function Services() {
-  const [selected, setSelected] = useState('')
-  const [result, setResult] = useState('')
-  const resultRef = useRef(null)
+  const [modal, setModal] = useState(null)
 
-  const serviceInfo = {
-    'Online marketing': `
-      <strong>Online Marketing &amp; Tutoring</strong><br><br>
-      I offer online marketing services across multiple platforms including YouTube, TikTok, Facebook, and Instagram.
-      Whether you need brand awareness, audience growth, or content strategy, I help you reach the right audience
-      with engaging digital content. I also provide tutoring on how to leverage these platforms effectively for
-      personal branding or business growth.<br><br>
-      <em>Platforms: YouTube, TikTok, Facebook, Instagram</em>
-    `,
-    'Web Design': `
-      <strong>Web Design &amp; Development</strong><br><br>
-      I build modern, responsive websites tailored to your brand's identity — from personal portfolios and
-      business sites to full e-commerce platforms. Using technologies like HTML, CSS, JavaScript, Bootstrap,
-      React, PHP, and WordPress, I create websites that are fast, user-friendly, and visually compelling.<br><br>
-      <strong>Recent projects:</strong> Kainafresh E-commerce, Rwanda ICT Chamber redesign, Umuganda Tracking System
-    `,
-    'ICT Training and computer maintenance': `
-      <strong>ICT Training &amp; Computer Maintenance</strong><br><br>
-      I provide comprehensive training in:<br>
-      • Microsoft Offices (Word, Excel, PowerPoint, Publisher, Access, Outlook)<br>
-      • Google Suites (Docs, G-Mail, Forms, Sheets)<br>
-      • Canva design (full training)<br>
-      • Photoshop (Intermediate level)<br>
-      • Fluent Touch typing<br>
-      • Software programming fundamentals (HTML, CSS, JavaScript, PHP)<br><br>
-      I also offer computer maintenance support and troubleshooting for individuals and organizations.
-    `,
-    'Photos and Video Editing (Shooting)': `
-      <strong>Photos &amp; Video Editing</strong><br><br>
-      I offer professional photo and video editing services using industry-standard tools:<br>
-      • <strong>Video Editing:</strong> CapCut, Wondershare Filmora<br>
-      • <strong>Photo Editing:</strong> Photoshop (Intermediate), Canva<br>
-      • <strong>Design:</strong> Banners, flyers, social media graphics<br><br>
-      I also create YouTube tutorial content and can help with video shooting, editing, and production
-      for your brand or personal projects.
-    `,
-  }
-
-  const handleSubmit = () => {
-    if (selected) {
-      setResult(serviceInfo[selected])
-    } else {
-      setResult('Please select a service first.')
-    }
-  }
-
-  const closeResult = () => {
-    setResult('')
-    setSelected('')
-  }
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (resultRef.current && !resultRef.current.contains(e.target)) {
-        closeResult()
-      }
-    }
-    if (result) {
-      document.addEventListener('mousedown', handleClickOutside)
-    }
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [result])
+  const openModal = (s) => setModal(s)
+  const closeModal = () => setModal(null)
 
   return (
     <section id="services" className="text-center">
@@ -77,132 +62,45 @@ export default function Services() {
         </p>
 
         <div className="row mt-4 g-4">
-          <div className="col-md-4">
-            <div className="service-card h-100">
-              <div className="icon-box">
-                <i className="fas fa-laptop-code"></i>
-              </div>
-              <h5>Web Development & ICT Training</h5>
-              <p>
-                Build modern websites and web applications while providing comprehensive
-                training in MS Office, Google Suites, Canva, Photoshop, and software
-                programming fundamentals.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="service-card h-100">
-              <div className="icon-box">
-                <i className="fas fa-database"></i>
-              </div>
-              <h5>System Design & Product Management</h5>
-              <p>
-                Design and develop systems for attendance tracking, community engagement,
-                and reporting platforms with expertise in product lifecycle management.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="service-card h-100">
-              <div className="icon-box">
-                <i className="fas fa-headset"></i>
-              </div>
-              <h5>Digital Literacy & Innovation</h5>
-              <p>
-                Teach digital skills including touch typing, video/photo editing, and
-                online marketing while driving community-based digital projects and
-                innovation.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="row justify-content-center mt-5">
-          <div className="col-md-6">
-            <div style={{
-              background: 'var(--gray-50)',
-              borderRadius: 'var(--radius-lg)',
-              padding: '28px',
-              border: '1px solid var(--gray-200)',
-            }}>
-              <p style={{ fontWeight: 600, marginBottom: '12px', color: 'var(--gray-700)' }}>
-                <i className="fa-solid fa-magnifying-glass" style={{ marginRight: '8px', color: 'var(--primary)' }}></i>
-                Search a service to learn more
-              </p>
-              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <select
-                  value={selected}
-                  onChange={(e) => setSelected(e.target.value)}
-                  style={{
-                    flex: '1',
-                    minWidth: '200px',
-                    padding: '12px 16px',
-                    borderRadius: 'var(--radius-sm)',
-                    border: '2px solid var(--gray-200)',
-                    fontSize: '0.9rem',
-                    color: 'var(--gray-700)',
-                    background: 'white',
-                    cursor: 'pointer',
-                    outline: 'none',
-                    fontFamily: 'inherit',
-                  }}
-                >
-                  <option value="" disabled>Select a service...</option>
-                  <option value="Online marketing">Online Marketing</option>
-                  <option value="Web Design">Web Design</option>
-                  <option value="ICT Training and computer maintenance">ICT Training &amp; Maintenance</option>
-                  <option value="Photos and Video Editing (Shooting)">Photos &amp; Video Editing</option>
-                </select>
-                <button
-                  type="button"
-                  onClick={handleSubmit}
-                  className="btn-gradient"
-                  style={{ border: 'none', cursor: 'pointer', padding: '12px 24px' }}
-                >
-                  Submit
-                </button>
-              </div>
-              {result && (
-                <div
-                  ref={resultRef}
-                  style={{
-                    marginTop: '16px',
-                    padding: '16px',
-                    background: 'white',
-                    borderRadius: 'var(--radius-sm)',
-                    border: '1px solid var(--gray-200)',
-                    color: 'var(--gray-600)',
-                    fontSize: '0.9rem',
-                    lineHeight: '1.7',
-                    textAlign: 'center',
-                    position: 'relative',
-                  }}
-                >
-                  <button
-                    onClick={closeResult}
-                    style={{
-                      position: 'absolute',
-                      top: '8px',
-                      right: '10px',
-                      border: 'none',
-                      background: 'transparent',
-                      fontSize: '1.1rem',
-                      cursor: 'pointer',
-                      color: 'var(--gray-400)',
-                      lineHeight: 1,
-                      padding: '2px 6px',
-                    }}
-                    aria-label="Close"
-                  >
-                    &times;
-                  </button>
-                  <div dangerouslySetInnerHTML={{ __html: result }} />
+          {services.map((s) => (
+            <div className="col-md-4" key={s.id}>
+              <div className="service-card h-100" onClick={() => openModal(s)} style={{ cursor: 'pointer' }}>
+                <div className="icon-box">
+                  <i className={`fas ${s.icon}`}></i>
                 </div>
-              )}
+                <h5>{s.title}</h5>
+                <p>{s.short}</p>
+                <div className="service-card-footer">
+                  <span className="service-learn-more">
+                    Learn more <i className="fas fa-arrow-right"></i>
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
+
+      {modal && (
+        <div className="service-modal" onClick={closeModal}>
+          <div className="service-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="service-modal-close" onClick={closeModal}>&times;</button>
+            <div className="service-modal-header">
+              <div className="service-modal-icon">
+                <i className={`fas ${modal.icon}`}></i>
+              </div>
+              <h3>{modal.title}</h3>
+            </div>
+            <div className="service-modal-body">
+              <ul>
+                {modal.details.map((d, i) => (
+                  <li key={i}>{d}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

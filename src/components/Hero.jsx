@@ -5,6 +5,10 @@ export default function Hero() {
 
   return (
     <header id="home" className="hero position-relative" ref={heroRef}>
+      <div className="hero-bg">
+        <img src="/garelly/Rwanda ICT Chamber May 2026 MindSpace mental health project presentation at KLab for compreting 6 Month of professional internship as backend Developer (2).jpg" alt="" />
+        <div className="hero-bg-overlay"></div>
+      </div>
       <div className="hero-grid"></div>
       <div className="hero-floats">
         <div className="hero-float hero-float--1"></div>

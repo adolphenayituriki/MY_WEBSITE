@@ -7,6 +7,7 @@ import CVSection from '../components/CVSection.jsx'
 import About from '../components/About.jsx'
 import Skills from '../components/Skills.jsx'
 import Certifications from '../components/Certifications.jsx'
+import Gallery from '../components/Gallery.jsx'
 import GetStartedSection from '../components/GetStartedSection.jsx'
 import Contact from '../components/Contact.jsx'
 
@@ -30,6 +31,7 @@ export default function HomePage() {
       <About />
       <Skills />
       <Certifications />
+      <Gallery />
       <GetStartedSection />
       <Contact />
     </main>
