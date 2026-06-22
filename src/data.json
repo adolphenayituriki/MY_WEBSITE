@@ -142,6 +142,19 @@
       ],
       "liveUrl": "https://adolphenayituriki.netlify.app/",
       "img": "/images/umuganda.png"
+    },
+    {
+      "id": 7,
+      "title": "MindSpace",
+      "desc": "Making mental health support accessible, stigma-free, and culturally grounded for every Rwandan — regardless of income, location, or background. Presented at Rwanda ICT Chamber on 29 May 2026.",
+      "tags": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Mental Health"
+      ],
+      "liveUrl": "",
+      "img": "/garelly/Rwanda ICT Chamber May 2026 MindSpace mental health project presentation at KLab for compreting 6 Month of professional internship as backend Developer (2).jpg"
     }
   ],
   "skills": [
@@ -166,11 +179,15 @@
         },
         {
           "name": "React",
-          "level": 55
+          "level": 70
         },
         {
           "name": "Node.js",
-          "level": 55
+          "level": 70
+        },
+        {
+          "name": "MongoDB",
+          "level": 65
         },
         {
           "name": "Bootstrap",
