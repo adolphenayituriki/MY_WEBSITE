@@ -93,7 +93,7 @@ export default function CVSection() {
               <div className="cv-modal-section">
                 <h4><i className="fa-solid fa-code"></i> Skills</h4>
                 <div className="cv-modal-skills">
-                  <span><strong>Web:</strong> HTML, Bootstrap, CSS, JavaScript, PHP, WordPress</span>
+                  <span><strong>Web:</strong> HTML, Bootstrap, CSS, JavaScript, React, Node.js, PHP, WordPress</span>
                   <span><strong>Product Management:</strong> Idea generation, market research, product design, launch, performance tracking</span>
                   <span><strong>Multimedia:</strong> CapCut, Wondershare Filmora, Photoshop, Canva</span>
                   <span><strong>Computer:</strong> MS Offices, Google Suites, Fluent Touch typer</span>
