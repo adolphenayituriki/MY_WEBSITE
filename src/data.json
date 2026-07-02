@@ -85,6 +85,53 @@
       "img": "/images/Kainafresh E-commerce website.png"
     },
     {
+      "id": 3,
+      "title": "Rwanda ICT Chamber Website Redesign",
+      "desc": "Rwanda ICT Chamber Website redesign project.",
+      "tags": [
+        "WordPress",
+        "UI/UX"
+      ],
+      "liveUrl": "https://ict.redp.rw/",
+      "img": "/images/Rwanda ICT Chamber Website redesign.png"
+    },
+    {
+      "id": 5,
+      "title": "Computer Support Platform",
+      "desc": "Help students learn computer skills, troubleshooting, and basic ICT concepts.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "liveUrl": "https://computer-support-ict.vercel.app/",
+      "img": "/images/computer support.png"
+    },
+    {
+      "id": 7,
+      "title": "MindSpace",
+      "desc": "Making mental health support accessible, stigma-free, and culturally grounded for every Rwandan — regardless of income, location, or background. Presented at Rwanda ICT Chamber on 29 May 2026.",
+      "tags": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Mental Health"
+      ],
+      "liveUrl": "https://mindspace-mentalhealth-system.vercel.app/",
+      "img": "/garelly/Rwanda ICT Chamber May 2026 MindSpace mental health project presentation at KLab for compreting 6 Month of professional internship as backend Developer (2).jpg"
+    },
+    {
+      "id": 8,
+      "title": "Relax Media Earn Promotion",
+      "desc": "A platform for media earn promotions and advertising.",
+      "tags": [
+        "React",
+        "Node.js"
+      ],
+      "liveUrl": "https://relaxmedia-earnpromotion.vercel.app/",
+      "img": "/project/relax-media.png"
+    },
+    {
       "id": 2,
       "title": "Digital Tracking for Health Transparency",
       "desc": "Report public service issues and track resolution status effectively.",
@@ -95,17 +142,6 @@
       "liveUrl": "https://aidtransparency.netlify.app/",
       "githubUrl": "https://github.com/adolphenayituriki/Digital-Tracking-Solution-for-Health-Service-Transparency-System2-main",
       "img": "/images/Digital tracking for health transparency .png"
-    },
-    {
-      "id": 3,
-      "title": "Rwanda ICT Chamber Website Redesign",
-      "desc": "Rwanda ICT Chamber Website redesign project.",
-      "tags": [
-        "WordPress",
-        "UI/UX"
-      ],
-      "liveUrl": "https://ict.redp.rw/",
-      "img": "/images/Rwanda ICT Chamber Website redesign.png"
     },
     {
       "id": 4,
@@ -120,42 +156,6 @@
       "githubUrl": "https://github.com/adolphenayituriki/umuganda_system",
       "img": "/images/umuganda.png"
     },
-    {
-      "id": 5,
-      "title": "ICT Support Platform",
-      "desc": "Help students learn computer skills, troubleshooting, and basic ICT concepts.",
-      "tags": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ],
-      "liveUrl": "https://umuganda.netlify.app/html/citizendashbod%20copy",
-      "img": "/images/computer support.png"
-    },
-    {
-      "id": 6,
-      "title": "Citizen Engagement System",
-      "desc": "A web system for citizens to report public service issues and track complaint status.",
-      "tags": [
-        "PHP",
-        "MySQL"
-      ],
-      "liveUrl": "https://adolphenayituriki.netlify.app/",
-      "img": "/images/umuganda.png"
-    },
-    {
-      "id": 7,
-      "title": "MindSpace",
-      "desc": "Making mental health support accessible, stigma-free, and culturally grounded for every Rwandan — regardless of income, location, or background. Presented at Rwanda ICT Chamber on 29 May 2026.",
-      "tags": [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Mental Health"
-      ],
-      "liveUrl": "",
-      "img": "/garelly/Rwanda ICT Chamber May 2026 MindSpace mental health project presentation at KLab for compreting 6 Month of professional internship as backend Developer (2).jpg"
-    }
   ],
   "skills": [
     {
@@ -179,11 +179,11 @@
         },
         {
           "name": "React",
-          "level": 70
+          "level": 80
         },
         {
           "name": "Node.js",
-          "level": 70
+          "level": 80
         },
         {
           "name": "MongoDB",
@@ -221,6 +221,10 @@
         {
           "name": "CapCut / Filmora",
           "level": 75
+        },
+        {
+          "name": "Postman (API Testing)",
+          "level": 80
         }
       ]
     },

@@ -14,7 +14,10 @@ export default function Projects() {
           {projects.map((p, i) => (
             <div className="col" key={p.id || i}>
               <div className="card h-100">
-                <img src={p.img} className="card-img-top" alt={p.title} />
+                <div className="card-img-wrapper">
+                  <img src={p.img} className="card-img-top" alt={p.title} />
+                  <div className="card-img-overlay"></div>
+                </div>
                 <div className="card-body">
                   <h5 className="card-title">{p.title}</h5>
                   <p>{p.desc}</p>
