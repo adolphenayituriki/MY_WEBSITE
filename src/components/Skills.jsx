@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { getData } from '../admin/dataStore.js'
 
 const gradients = [
-  'linear-gradient(135deg, #2563eb, #7c3aed)',
-  'linear-gradient(135deg, #10b981, #059669)',
-  'linear-gradient(135deg, #FFCE08, #E5B800)',
+  'var(--gradient-primary)',
+  'var(--gradient-primary)',
+  'var(--gradient-primary)',
 ]
 
 export default function Skills() {
@@ -30,9 +30,9 @@ export default function Skills() {
         <p className="section-subtitle text-center">Technologies and tools I work with daily</p>
         <div className="row justify-content-center">
           <div className="col-md-10">
-            <div className="row g-4">
+            <div className="row g-3">
               {skillCategories.map((cat, i) => (
-                <div className="col-md-6" key={i}>
+                <div className="col-md-4" key={i}>
                   <div className="skill-category">
                     <h3>{cat.title}</h3>
                     <div className="skill-bar-group">

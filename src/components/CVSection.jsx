@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { getData } from '../admin/dataStore.js'
+import { useModal } from '../lib/useModal.js'
 
 export default function CVSection() {
   const { cv } = getData()
   const [showModal, setShowModal] = useState(false)
+  const { dialogProps } = useModal(showModal, () => setShowModal(false), 'Full CV')
 
   return (
     <section id="cv" className="cv-section text-center">
@@ -13,25 +15,38 @@ export default function CVSection() {
           Discover my experience, skills, and achievements in detail
         </p>
         <div className="cv-card">
-          <img src={cv.image} alt={cv.name} />
-          <h3>{cv.name}</h3>
-          <p className="cv-role">{cv.role}</p>
-          <p className="cv-desc">
-            <i className="fa-solid fa-envelope" style={{ marginRight: 6 }}></i> {cv.contact.email} &nbsp;&nbsp;
-            <i className="fa-solid fa-phone" style={{ marginRight: 6 }}></i> {cv.contact.phone} &nbsp;&nbsp;
-            <i className="fa-solid fa-location-dot" style={{ marginRight: 6 }}></i> {cv.contact.location}
-            <br />
-            <i className="fa-solid fa-globe" style={{ marginRight: 6 }}></i> {cv.contact.website} &nbsp;&nbsp;
-            <i className="fab fa-github" style={{ marginRight: 6 }}></i> {cv.contact.github}
-          </p>
+          <div className="cv-card-head">
+            <div className="cv-card-photo">
+              <img src={cv.image} alt={cv.name} loading="lazy" decoding="async" />
+            </div>
+            <h3>{cv.name}</h3>
+            <p className="cv-role">{cv.role}</p>
+          </div>
+          <div className="cv-contact-grid">
+            <a className="cv-contact-chip" href={`mailto:${cv.contact.email}`}>
+              <i className="fa-solid fa-envelope"></i><span>{cv.contact.email}</span>
+            </a>
+            <a className="cv-contact-chip" href={`tel:${cv.contact.phone.replace(/[^\d+]/g, '')}`}>
+              <i className="fa-solid fa-phone"></i><span>{cv.contact.phone}</span>
+            </a>
+            <span className="cv-contact-chip">
+              <i className="fa-solid fa-location-dot"></i><span>{cv.contact.location}</span>
+            </span>
+            <a className="cv-contact-chip" href={`https://${cv.contact.website}`} target="_blank" rel="noopener noreferrer">
+              <i className="fa-solid fa-globe"></i><span>{cv.contact.website}</span>
+            </a>
+            <a className="cv-contact-chip" href={`https://${cv.contact.github}`} target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-github"></i><span>{cv.contact.github}</span>
+            </a>
+          </div>
           <div className="cv-actions">
             <button className="btn-gradient" onClick={() => setShowModal(true)} style={{ border: 'none', cursor: 'pointer' }}>
               <i className="fa-solid fa-file-lines"></i> Full CV
             </button>
-            <a href={cv.pdfUrl} target="_blank" className="btn-outline-light-custom" style={{ color: '#2563eb', borderColor: '#2563eb' }}>
+            <a href={cv.pdfUrl} target="_blank" className="btn-project-outline">
               <i className="fa-solid fa-eye"></i> View PDF
             </a>
-            <a href={cv.pdfUrl} download className="btn-outline-light-custom" style={{ color: '#2563eb', borderColor: '#2563eb' }}>
+            <a href={cv.pdfUrl} download className="btn-project-outline">
               <i className="fa-solid fa-download"></i> Download
             </a>
           </div>
@@ -40,10 +55,10 @@ export default function CVSection() {
 
       {showModal && (
         <div className="cv-modal-overlay" onClick={() => setShowModal(false)}>
-          <div className="cv-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="cv-modal-close" onClick={() => setShowModal(false)}>&times;</button>
+          <div className="cv-modal" {...dialogProps} onClick={(e) => e.stopPropagation()}>
+            <button className="cv-modal-close" onClick={() => setShowModal(false)} aria-label="Close">&times;</button>
             <div className="cv-modal-header">
-              <img src={cv.image} alt={cv.name} />
+              <img src={cv.image} alt={cv.name} loading="lazy" decoding="async" />
               <div>
                 <h3>{cv.name}</h3>
                 <p>{cv.role}</p>
@@ -105,11 +120,11 @@ export default function CVSection() {
                 <h4><i className="fa-solid fa-trophy"></i> Awards &amp; Certificates</h4>
                 <div className="cv-modal-item">
                   <div className="cv-modal-item-header"><strong>DTP Hackathon 2025</strong><span>05/09/2025</span></div>
-                  <p className="cv-modal-item-sub">Kigali-Marriott — Awarded for IT excellence with real-world software solutions</p>
+                  <p className="cv-modal-item-sub">Kigali-Marriott: Awarded for IT excellence with real-world software solutions</p>
                 </div>
                 <div className="cv-modal-item">
                   <div className="cv-modal-item-header"><strong>DTS Trainer</strong><span>04/10/2025</span></div>
-                  <p className="cv-modal-item-sub">Huye Campus — Trained students in MS Offices, Google Suites, Canva, Photoshop</p>
+                  <p className="cv-modal-item-sub">Huye Campus: Trained students in MS Offices, Google Suites, Canva, Photoshop</p>
                 </div>
                 <div className="cv-modal-item">
                   <div className="cv-modal-item-header"><strong>Product Management (Basic, Intermediate &amp; Advanced)</strong><span>14/05/2025</span></div>
@@ -117,7 +132,7 @@ export default function CVSection() {
                 </div>
                 <div className="cv-modal-item">
                   <div className="cv-modal-item-header"><strong>AI Career Essentials (AICE)</strong><span>22/05/2024</span></div>
-                  <p className="cv-modal-item-sub">ALX Rwanda — AI Augmented Professional Development Skills</p>
+                  <p className="cv-modal-item-sub">ALX Rwanda: AI Augmented Professional Development Skills</p>
                 </div>
               </div>
               <div className="cv-modal-section">

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
-const PASSWORD = 'adolphe@078'
+import { verifyPassword, setAuthed } from '../lib/auth.js'
+import { useModal } from '../lib/useModal.js'
 
 export default function AdminIcon() {
   const [showGate, setShowGate] = useState(false)
@@ -9,11 +9,23 @@ export default function AdminIcon() {
   const [error, setError] = useState(false)
   const [shaking, setShaking] = useState(false)
   const navigate = useNavigate()
+  const { dialogProps } = useModal(showGate, () => {
+    setShowGate(false)
+    setInput('')
+    setError(false)
+  }, 'Admin Dashboard')
 
-  const handleSubmit = (e) => {
+  const close = () => {
+    setShowGate(false)
+    setInput('')
+    setError(false)
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if (input === PASSWORD) {
-      sessionStorage.setItem('admin_authed', 'true')
+    const ok = await verifyPassword(input)
+    if (ok) {
+      setAuthed(true)
       navigate('/admin')
     } else {
       setError(true)
@@ -30,9 +42,9 @@ export default function AdminIcon() {
       </button>
 
       {showGate && (
-        <div className="password-gate-overlay" onClick={() => { setShowGate(false); setInput(''); setError(false) }}>
-          <div className={`password-gate-card ${shaking ? 'shake' : ''}`} onClick={(e) => e.stopPropagation()}>
-            <button className="password-gate-close" onClick={() => { setShowGate(false); setInput(''); setError(false) }}>&times;</button>
+        <div className="password-gate-overlay" onClick={close}>
+          <div className={`password-gate-card ${shaking ? 'shake' : ''}`} {...dialogProps} onClick={(e) => e.stopPropagation()}>
+            <button className="password-gate-close" onClick={close}>&times;</button>
             <div className="password-gate-lock">
               <i className="fas fa-lock"></i>
             </div>

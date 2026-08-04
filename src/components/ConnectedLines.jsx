@@ -12,6 +12,9 @@ export default function ConnectedLines() {
     const count = 20
     const maxDist = 160
 
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reducedMotion) return
+
     const resize = () => {
       w = canvas.width = window.innerWidth
       h = canvas.height = window.innerHeight
@@ -54,7 +57,7 @@ export default function ConnectedLines() {
             ctx.beginPath()
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(q.x, q.y)
-            ctx.strokeStyle = `rgba(59,130,246,${(1 - dist / maxDist) * 0.12})`
+            ctx.strokeStyle = `rgba(255,255,255,${(1 - dist / maxDist) * 0.12})`
             ctx.lineWidth = 0.5
             ctx.stroke()
           }
@@ -66,9 +69,20 @@ export default function ConnectedLines() {
     init()
     draw()
     window.addEventListener('resize', resize)
+
+    const onVisibility = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animId)
+      } else {
+        draw()
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibility)
+
     return () => {
       cancelAnimationFrame(animId)
       window.removeEventListener('resize', resize)
+      document.removeEventListener('visibilitychange', onVisibility)
     }
   }, [])
 

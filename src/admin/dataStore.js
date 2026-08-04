@@ -71,9 +71,12 @@ function deepMerge(target, source) {
 
 export async function publishToGitHub(data, token, owner, repo, message) {
   const path = 'src/data.json'
-  const encoder = new TextEncoder()
-  const bytes = encoder.encode(JSON.stringify(data, null, 2))
-  const base64 = btoa(String.fromCharCode(...bytes))
+  const bytes = new TextEncoder().encode(JSON.stringify(data, null, 2))
+  let base64 = ''
+  const chunkSize = 0x8000
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    base64 += btoa(String.fromCharCode(...bytes.subarray(i, i + chunkSize)))
+  }
 
   let sha = null
   try {

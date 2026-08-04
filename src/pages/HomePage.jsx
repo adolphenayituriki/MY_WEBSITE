@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Hero from '../components/Hero.jsx'
 import Services from '../components/Services.jsx'
@@ -13,7 +13,6 @@ import Contact from '../components/Contact.jsx'
 
 export default function HomePage() {
   const location = useLocation()
-  const mainRef = useRef(null)
 
   useEffect(() => {
     if (location.hash === '#contact') {
@@ -23,7 +22,7 @@ export default function HomePage() {
   }, [location])
 
   return (
-    <main ref={mainRef}>
+    <main>
       <Hero />
       <Services />
       <Projects />

@@ -20,11 +20,11 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => {
-      const sections = ['home', 'services', 'projects', 'cv', 'about', 'gallery', 'skills', 'certifications', 'get-started', 'contact']
+      const sections = ['home', 'services', 'projects', 'about', 'cv', 'gallery', 'skills', 'certifications', 'get-started', 'contact']
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i])
         if (el && el.getBoundingClientRect().top <= 120) {
-          if (sections[i] === 'gallery') setActive('about')
+          if (['gallery', 'skills', 'certifications'].includes(sections[i])) setActive('about')
           else setActive(sections[i])
           break
         }
@@ -45,7 +45,6 @@ export default function Navbar() {
     { id: 'home', label: 'Home' },
     { id: 'services', label: 'Services' },
     { id: 'projects', label: 'Projects' },
-    { id: 'cv', label: 'CV' },
   ]
 
   return (
@@ -96,6 +95,8 @@ export default function Navbar() {
             <li className={`nav-item dropdown${aboutOpen ? ' show' : ''}`}
               onMouseEnter={() => setAboutOpen(true)}
               onMouseLeave={() => setAboutOpen(false)}
+              onFocus={() => setAboutOpen(true)}
+              onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setAboutOpen(false) }}
             >
               <a
                 className={`nav-link dropdown-toggle${active === 'about' ? ' active' : ''}`}
@@ -108,26 +109,19 @@ export default function Navbar() {
                 About
               </a>
               <ul className={`dropdown-menu${aboutOpen ? ' show' : ''}`} aria-labelledby="aboutDropdown">
-                <li><a className="dropdown-item" href="#about" onClick={(e) => { e.preventDefault(); scrollTo('about') }}>About Me</a></li>
-                <li><a className="dropdown-item" href="#gallery" onClick={(e) => { e.preventDefault(); scrollTo('gallery') }}>Gallery</a></li>
+                <li><a className="dropdown-item" href="#about" onClick={(e) => { e.preventDefault(); scrollTo('about') }}><i className="fa-solid fa-user"></i>About Me</a></li>
+                <li><a className="dropdown-item" href="#gallery" onClick={(e) => { e.preventDefault(); scrollTo('gallery') }}><i className="fa-solid fa-images"></i>Gallery</a></li>
+                <li><a className="dropdown-item" href="#skills" onClick={(e) => { e.preventDefault(); scrollTo('skills') }}><i className="fa-solid fa-code"></i>Skills</a></li>
+                <li><a className="dropdown-item" href="#certifications" onClick={(e) => { e.preventDefault(); scrollTo('certifications') }}><i className="fa-solid fa-certificate"></i>Certifications</a></li>
               </ul>
             </li>
-            <li className="nav-item" key="skills">
+            <li className="nav-item" key="cv">
               <a
-                className={`nav-link${active === 'skills' ? ' active' : ''}`}
-                href="#skills"
-                onClick={(e) => { e.preventDefault(); scrollTo('skills') }}
+                className={`nav-link${active === 'cv' ? ' active' : ''}`}
+                href="#cv"
+                onClick={(e) => { e.preventDefault(); scrollTo('cv') }}
               >
-                Skills
-              </a>
-            </li>
-            <li className="nav-item" key="certifications">
-              <a
-                className={`nav-link${active === 'certifications' ? ' active' : ''}`}
-                href="#certifications"
-                onClick={(e) => { e.preventDefault(); scrollTo('certifications') }}
-              >
-                Certifications
+                CV
               </a>
             </li>
             <li className="nav-item" key="contact">
@@ -137,6 +131,11 @@ export default function Navbar() {
                 onClick={(e) => { e.preventDefault(); scrollTo('contact') }}
               >
                 Contact
+              </a>
+            </li>
+            <li className="nav-item nav-cta-item">
+              <a className="nav-cta" href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('contact') }}>
+                <i className="fa-solid fa-paper-plane"></i> Let's Talk
               </a>
             </li>
           </ul>

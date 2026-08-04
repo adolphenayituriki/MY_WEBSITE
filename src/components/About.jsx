@@ -17,14 +17,19 @@ export default function About() {
       <div className="container">
         <div className="row align-items-center g-5">
           <div className="col-md-5 text-center">
-            <img
-              src={about.image}
-              alt="Nayituriki Adolphe"
-              className="about-img"
-            />
+            <div className="about-img-wrap">
+              <img
+                src={about.image}
+                alt="Nayituriki Adolphe"
+                className="about-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
           <div className="col-md-7">
-            <h2 className="section-title" style={{ marginBottom: '24px' }}>About Me</h2>
+            <h2 className="section-title" style={{ marginBottom: '8px' }}>About Me</h2>
+            <p className="about-name">{about.name}</p>
             {about.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
             <div className="highlight-list">
               {about.highlights.map((h, i) => (

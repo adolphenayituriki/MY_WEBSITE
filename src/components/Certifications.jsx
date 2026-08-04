@@ -1,15 +1,11 @@
 import { useState } from 'react'
 import { getData } from '../admin/dataStore.js'
+import { useModal } from '../lib/useModal.js'
 
 export default function Certifications() {
   const { certifications: certs } = getData()
   const [modalSrc, setModalSrc] = useState(null)
-
-  const openModal = (src) => {
-    setModalSrc(src)
-    const modal = new window.bootstrap.Modal(document.getElementById('certModal'))
-    modal.show()
-  }
+  const { dialogProps } = useModal(!!modalSrc, () => setModalSrc(null), 'Certificate preview')
 
   return (
     <section id="certifications" className="text-center">
@@ -21,8 +17,8 @@ export default function Certifications() {
             <div className="col" key={c.id || i}>
               <div className="certificate-box">
                 {c.img ? (
-                  <a href="#" onClick={(e) => { e.preventDefault(); openModal(c.viewUrl) }}>
-                    <img src={c.img} alt={c.label} />
+                  <a href="#" onClick={(e) => { e.preventDefault(); setModalSrc(c.viewUrl) }}>
+                    <img src={c.img} alt={c.label} loading="lazy" decoding="async" />
                   </a>
                 ) : (
                   <div className="cert-placeholder">
@@ -43,19 +39,16 @@ export default function Certifications() {
         </div>
       </div>
 
-      <div className="modal fade" id="certModal" tabIndex="-1" aria-hidden="true">
-        <div className="modal-dialog modal-dialog-centered modal-xl">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title">Certificate</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div className="modal-body text-center">
-              {modalSrc && <iframe src={modalSrc} title="Certificate" width="100%" height="500px" style={{ border: 'none' }} />}
+      {modalSrc && (
+        <div className="cert-modal" onClick={() => setModalSrc(null)}>
+          <div className="cert-modal-content" {...dialogProps} onClick={(e) => e.stopPropagation()}>
+            <button className="cert-modal-close" onClick={() => setModalSrc(null)} aria-label="Close">&times;</button>
+            <div className="cert-modal-body">
+              <iframe src={modalSrc} title="Certificate" width="100%" height="600px" style={{ border: 'none' }} />
             </div>
           </div>
         </div>
-      </div>
+      )}
     </section>
   )
 }

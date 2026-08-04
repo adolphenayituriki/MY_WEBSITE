@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { getData, saveData, exportData, importData, resetData, publishToGitHub, defaults } from './dataStore.js'
-
-const ADMIN_PASSWORD = 'adolphe@078'
+import { verifyPassword, isAuthed, setAuthed } from '../lib/auth.js'
+import { useModal } from '../lib/useModal.js'
 
 const sections = [
   { id: 'hero', label: 'Hero', icon: 'fa-house' },
@@ -16,7 +16,7 @@ const sections = [
 ]
 
 export default function AdminDashboard() {
-  const [authed, setAuthed] = useState(() => !!sessionStorage.getItem('admin_authed'))
+  const [authed, setAuthedState] = useState(() => isAuthed())
   const [password, setPassword] = useState('')
   const [activeSection, setActiveSection] = useState('hero')
   const [data, setData] = useState(() => getData())
@@ -28,10 +28,20 @@ export default function AdminDashboard() {
   const [pubMessage, setPubMessage] = useState('Update site data from admin dashboard')
   const [pubStatus, setPubStatus] = useState('')
   const [pubError, setPubError] = useState('')
+  const { dialogProps: publishDialogProps } = useModal(showPublish, () => {
+    if (pubStatus !== 'publishing') {
+      setShowPublish(false)
+      setPubError('')
+    }
+  }, 'Publish to GitHub')
 
-  const login = () => {
-    if (password === ADMIN_PASSWORD) setAuthed(true)
-    else alert('Wrong password')
+  const login = async () => {
+    if (await verifyPassword(password)) {
+      setAuthed(true)
+      setAuthedState(true)
+    } else {
+      alert('Wrong password')
+    }
   }
 
   const update = (path, value) => {
@@ -154,7 +164,7 @@ export default function AdminDashboard() {
 
         {showPublish && (
           <div className="admin-publish-overlay" onClick={() => { if (pubStatus !== 'publishing') { setShowPublish(false); setPubError('') } }}>
-            <div className="admin-publish-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="admin-publish-modal" {...publishDialogProps} onClick={(e) => e.stopPropagation()}>
               <button className="admin-publish-close" onClick={() => { setShowPublish(false); setPubError('') }} disabled={pubStatus === 'publishing'}>&times;</button>
               <h3><i className="fa-solid fa-rocket"></i> Publish to GitHub</h3>
               <p className="admin-publish-desc">Commits current data to <code>src/data.json</code> in your repo. Vercel will auto-deploy.</p>
@@ -522,6 +532,10 @@ function ContactEditor({ data, update }) {
       <TextInput label="Location" value={c.location} onChange={(e) => update('contact.location', e.target.value)} />
       <TextInput label="Website" value={c.website} onChange={(e) => update('contact.website', e.target.value)} />
       <TextInput label="GitHub" value={c.github} onChange={(e) => update('contact.github', e.target.value)} />
+      <TextInput label="LinkedIn" value={c.linkedin} onChange={(e) => update('contact.linkedin', e.target.value)} />
+      <TextInput label="Twitter / X" value={c.twitter} onChange={(e) => update('contact.twitter', e.target.value)} />
+      <TextInput label="Instagram" value={c.instagram} onChange={(e) => update('contact.instagram', e.target.value)} />
+      <TextInput label="YouTube" value={c.youtube} onChange={(e) => update('contact.youtube', e.target.value)} />
     </div>
   )
 }

@@ -7,15 +7,15 @@
       "ICT Trainer",
       "Digital Innovator"
     ],
-    "bgImage": "/garelly/Rwanda ICT Chamber May 2026 MindSpace mental health project presentation at KLab for compreting 6 Month of professional internship as backend Developer (2).jpg",
+    "bgImage": "/images/hero-bg.jpg",
     "bgAnimation": "heroZoom 10s ease-in-out infinite alternate"
   },
   "about": {
     "heading": "About Me",
+    "name": "Nayituriki Adolphe",
     "paragraphs": [
-      "A highly motivated student at the University of Rwanda, pursuing a Bachelor's in Business Information Technology (BIT Level 3). I'm passionate about using technology and innovation to solve real-world problems and create digital solutions that make life easier.",
-      "My name is Nayituriki Adolphe, a Full Stack Developer, System Designer, and ICT Trainer. Skilled in web development, Microsoft Offices, Google Tools, graphic design and teamwork, I bring creativity, discipline, and a results-driven mindset to every project I take on. My goal is to grow into a leading professional who bridges technology with impact.",
-      "My mission is simple: use technology to solve real-world challenges, whether through designing efficient platforms, empowering students with ICT knowledge, or driving community-based digital projects."
+      "Student of Business Information Technology at the University of Rwanda (BIT Level 3), passionate about building digital solutions that solve real-world problems.",
+      "Full Stack Developer, System Designer, and ICT Trainer — skilled in web development, Microsoft Office, Google tools, graphic design, and teamwork. My mission: use technology to solve real challenges through efficient platforms, ICT empowerment, and community-driven projects."
     ],
     "highlights": [
       "Full Stack Development",
@@ -33,7 +33,7 @@
       "id": "web",
       "title": "Web Development & ICT Training",
       "icon": "fa-laptop-code",
-      "short": "Build modern websites and web applications while providing comprehensive training in MS Office, Google Suites, Canva, Photoshop, and software programming fundamentals.",
+      "short": "Modern websites, web apps, and hands-on ICT training in MS Office, Google Suites, Canva, Photoshop, and programming.",
       "details": [
         "Modern, responsive websites tailored to your brand",
         "Technologies: HTML, CSS, JavaScript, Bootstrap, React, PHP, WordPress",
@@ -47,7 +47,7 @@
       "id": "system",
       "title": "System Design & Product Management",
       "icon": "fa-database",
-      "short": "Design and develop systems for attendance tracking, community engagement, and reporting platforms with expertise in product lifecycle management.",
+      "short": "Systems for attendance tracking, community engagement, and reporting — backed by full product lifecycle expertise.",
       "details": [
         "Full-stack system design and development",
         "Attendance tracking and reporting platforms",
@@ -61,7 +61,7 @@
       "id": "digital",
       "title": "Digital Literacy & Innovation",
       "icon": "fa-headset",
-      "short": "Teach digital skills including touch typing, video/photo editing, and online marketing while driving community-based digital projects.",
+      "short": "Digital skills coaching — touch typing, video/photo editing, online marketing, and community-driven projects.",
       "details": [
         "Digital skills training for individuals and organizations",
         "Online Marketing: YouTube, TikTok, Facebook, Instagram",
@@ -77,40 +77,45 @@
       "id": 1,
       "title": "Kainafresh Ltd E-commerce website",
       "desc": "An E-commerce website for Kainafresh Ltd.",
+      "category": "Websites",
       "tags": [
         "WordPress",
         "E-commerce"
       ],
       "liveUrl": "https://kainafresh.rw",
-      "img": "/images/Kainafresh E-commerce website.png"
+      "img": "/images/Kainafresh E-commerce website.jpg"
     },
     {
       "id": 3,
       "title": "Rwanda ICT Chamber Website Redesign",
       "desc": "Rwanda ICT Chamber Website redesign project.",
+      "category": "Websites",
       "tags": [
         "WordPress",
         "UI/UX"
       ],
       "liveUrl": "https://ict.redp.rw/",
-      "img": "/images/Rwanda ICT Chamber Website redesign.png"
+      "img": "/images/Rwanda ICT Chamber Website redesign.jpg"
     },
     {
       "id": 5,
       "title": "Computer Support Platform",
       "desc": "Help students learn computer skills, troubleshooting, and basic ICT concepts.",
+      "category": "Web Apps",
       "tags": [
-        "HTML",
-        "CSS",
-        "JavaScript"
+        "React",
+        "Node.js",
+        "Express",
+        "Tailwind CSS"
       ],
       "liveUrl": "https://computer-support-ict.vercel.app/",
-      "img": "/images/computer support.png"
+      "img": "/images/computer support.jpg"
     },
     {
       "id": 7,
       "title": "MindSpace",
       "desc": "Making mental health support accessible, stigma-free, and culturally grounded for every Rwandan — regardless of income, location, or background. Presented at Rwanda ICT Chamber on 29 May 2026.",
+      "category": "Web Apps",
       "tags": [
         "React",
         "Node.js",
@@ -121,32 +126,35 @@
       "img": "/garelly/Rwanda ICT Chamber May 2026 MindSpace mental health project presentation at KLab for compreting 6 Month of professional internship as backend Developer (2).jpg"
     },
     {
-      "id": 8,
-      "title": "Relax Media Earn Promotion",
-      "desc": "A platform for media earn promotions and advertising.",
+      "id": 9,
+      "title": "E-Booking System",
+      "desc": "An online booking system for hotels and businesses — let customers reserve rooms and services easily.",
+      "category": "Web Apps",
       "tags": [
-        "React",
-        "Node.js"
+        "Full-Stack",
+        "Booking System"
       ],
-      "liveUrl": "https://relaxmedia-earnpromotion.vercel.app/",
-      "img": "/project/relax-media.png"
+      "liveUrl": "https://e-booking-system.vercel.app/",
+      "img": "/images/E-Booking System  _Business_Hotel or Any.jpg"
     },
     {
       "id": 2,
       "title": "Digital Tracking for Health Transparency",
       "desc": "Report public service issues and track resolution status effectively.",
+      "category": "Systems",
       "tags": [
         "React",
         "Node.js"
       ],
       "liveUrl": "https://aidtransparency.netlify.app/",
       "githubUrl": "https://github.com/adolphenayituriki/Digital-Tracking-Solution-for-Health-Service-Transparency-System2-main",
-      "img": "/images/Digital tracking for health transparency .png"
+      "img": "/images/Digital tracking for health transparency .jpg"
     },
     {
       "id": 4,
       "title": "Umuganda Attendance Platform",
       "desc": "Track citizens' community work attendance and fines automatically.",
+      "category": "Systems",
       "tags": [
         "PHP",
         "MySQL",
@@ -154,8 +162,20 @@
       ],
       "liveUrl": "https://umuganda.netlify.app/html/citizendashbod%20copy",
       "githubUrl": "https://github.com/adolphenayituriki/umuganda_system",
-      "img": "/images/umuganda.png"
+      "img": "/images/umuganda.jpg"
     },
+    {
+      "id": 8,
+      "title": "Relax Media Earn Promotion",
+      "desc": "A platform for media earn promotions and advertising.",
+      "category": "Web Apps",
+      "tags": [
+        "React",
+        "Node.js"
+      ],
+      "liveUrl": "https://relaxmedia-earnpromotion.vercel.app/",
+      "img": "/project/relax-media.jpg"
+    }
   ],
   "skills": [
     {
@@ -257,25 +277,25 @@
   "certifications": [
     {
       "id": 1,
-      "img": "/images/40-alx-aice-ai-career-essentials-certificate-adolphe-nayituriki (1).png",
+      "img": "/images/40-alx-aice-ai-career-essentials-certificate-adolphe-nayituriki (1).jpg",
       "viewUrl": "/files/40-alx-aice-ai-career-essentials-certificate-adolphe-nayituriki (1).pdf",
       "label": "ALX Rwanda ACiE Certificate"
     },
     {
       "id": 2,
-      "img": "/images/DTP Product Management Begener certificate.png",
+      "img": "/images/DTP Product Management Begener certificate.jpg",
       "viewUrl": "/files/DTP Product Management Begener certificate.pdf",
       "label": "DTP Product Management Beginner"
     },
     {
       "id": 3,
-      "img": "/images/DTP Product Management Intermediate certificate.png",
+      "img": "/images/DTP Product Management Intermediate certificate.jpg",
       "viewUrl": "/files/DTP Product Management Intermediate certificate.pdf",
       "label": "DTP Product Management Intermediate"
     },
     {
       "id": 4,
-      "img": "/images/DTP Product Management Advanced certificate.png",
+      "img": "/images/DTP Product Management Advanced certificate.jpg",
       "viewUrl": "/files/DTP Product Management Advanced certificate.pdf",
       "label": "DTP Product Management Advanced"
     },
@@ -336,13 +356,13 @@
     "work": [
       {
         "id": 8,
-        "src": "/garelly/work/Rwanda ICT Chamber Website redesign.png",
+        "src": "/images/Rwanda ICT Chamber Website redesign.jpg",
         "caption": "Rwanda ICT Chamber website redesign",
         "description": "Redesigning the Rwanda ICT Chamber website."
       },
       {
         "id": 9,
-        "src": "/garelly/work/Kainafresh E-commerce website.png",
+        "src": "/images/Kainafresh E-commerce website.jpg",
         "caption": "Kainafresh e-commerce website",
         "description": "Building an e-commerce platform for Kainafresh."
       }
@@ -353,7 +373,12 @@
     "phone": "+250 780 505 948",
     "location": "Kigali, Rwanda",
     "website": "adolpheict.vercel.app",
-    "github": "github.com/adolphenayituriki"
+    "github": "github.com/adolphenayituriki",
+    "linkedin": "",
+    "twitter": "x.com/Nayituriki10270",
+    "facebook": "www.fb.com/l/6lp1kJRRR",
+    "instagram": "instagram.com/adolphenayituriki",
+    "youtube": "youtube.com/@Kiliziya-vibes"
   },
   "cv": {
     "name": "Nayituriki Adolphe",
