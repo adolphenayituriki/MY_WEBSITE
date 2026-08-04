@@ -41,7 +41,7 @@ export default function Hero() {
       <div className="hero-content container">
         <div className="hero-split">
           <div className="hero-text">
-            <span className="hero-eyebrow"><i className="fa-solid fa-star"></i> Amazing</span>
+            <span className="hero-eyebrow"><i className="fa-solid fa-location-dot"></i> Kigali, Rwanda</span>
             <h1>Nayituriki <span className="highlight">Adolphe</span></h1>
             <p className="hero-tagline">{hero.tagline}</p>
             <div className="hero-grid-badges">
