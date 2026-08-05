@@ -1,8 +1,8 @@
 const starters = [
   {
     icon: 'fa-laptop',
-    title: 'ICT Support Platform',
-    desc: 'Learn computer maintenance and skills',
+    title: 'CS Hub & Ai Learning Support Platform',
+    desc: 'Help students learn computer skills, troubleshooting, and basic ICT concepts. And also Ai tool for Education',
     cta: 'Open Platform',
     href: '/project/DTP_Hackaton_Project/html/CitizenDashbod copy.html',
     external: false,

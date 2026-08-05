@@ -15,7 +15,7 @@
     "name": "Nayituriki Adolphe",
     "paragraphs": [
       "Student of Business Information Technology at the University of Rwanda (BIT Level 3), passionate about building digital solutions that solve real-world problems.",
-      "Full Stack Developer, System Designer, and ICT Trainer — skilled in web development, Microsoft Office, Google tools, graphic design, and teamwork. My mission: use technology to solve real challenges through efficient platforms, ICT empowerment, and community-driven projects. I help businesses, students, and organizations across Rwanda and East Africa grow through technology."
+      "Full Stack Developer, System Designer, and ICT Trainer. Skilled in web development, Ai powered system, Microsoft Office, Google tools, graphic design, and teamwork. My mission: use technology to solve real challenges through efficient platforms, ICT empowerment, and community-driven projects. I help businesses, students, and organizations across Rwanda and East Africa grow through technology."
     ],
     "highlights": [
       "Full Stack Development",
@@ -99,8 +99,8 @@
     },
     {
       "id": 5,
-      "title": "Computer Support Platform",
-      "desc": "Help students learn computer skills, troubleshooting, and basic ICT concepts.",
+      "title": "CS Hub (iCT) & Ai learning Support Platform",
+      "desc": "Help students learn computer skills, troubleshooting, and basic ICT concepts. And also Ai tool for Education",
       "category": "Web Apps",
       "tags": [
         "React",
@@ -113,7 +113,7 @@
     },
     {
       "id": 7,
-      "title": "MindSpace",
+      "title": "MindSpace (A mental health support platform for Rwandans)",
       "desc": "Making mental health support accessible, stigma-free, and culturally grounded for every Rwandan — regardless of income, location, or background. Presented at Rwanda ICT Chamber on 29 May 2026.",
       "category": "Web Apps",
       "tags": [
@@ -127,8 +127,8 @@
     },
     {
       "id": 9,
-      "title": "E-Booking System",
-      "desc": "An online booking system for hotels and businesses — let customers reserve rooms and services easily.",
+      "title": "E-Booking System (Website and Template for E-Booking)",
+      "desc": "An online booking system for hotels and businesses. let customers reserve rooms and services easily.",
       "category": "Web Apps",
       "tags": [
         "Full-Stack",
@@ -316,13 +316,13 @@
         "id": 1,
         "src": "/garelly/Rwanda ICT Chamber May 2026 MindSpace mental health project presentation at KLab for compreting 6 Month of professional internship as backend Developer.jpg",
         "caption": "MindSpace mental health project presentation at KLab",
-        "description": "Presenting the MindSpace mental health project at KLab."
+        "description": "Presenting the MindSpace mental health project at KLab. 29 May 2026. This project was part of my being apart of Rwanda ICT Chamber as a backend developer."
       },
       {
         "id": 2,
         "src": "/garelly/Rwanda ICT Chamber May 2026 MindSpace mental health project presentation at KLab for compreting 6 Month of professional internship as backend Developer (2).jpg",
         "caption": "MindSpace presentation — group photo",
-        "description": "Group photo after the MindSpace mental health project presentation."
+        "description": "Group photo after the MindSpace mental health project presentation. 2026 May 29."
       },
       {
         "id": 3,
@@ -334,7 +334,7 @@
         "id": 4,
         "src": "/garelly/DTS-Digital Technology Skills Pitching on Graduation Janualy 2026 as a facilitetor at University of Rwanda Huye Campus.jpg",
         "caption": "DTS Digital Technology Skills pitching graduation",
-        "description": "Serving as a facilitator at the DTS pitching graduation ceremony."
+        "description": "Serving as a facilitator at the DTS pitching graduation ceremony. 2025 January."
       }
     ],
     "events": [
@@ -342,19 +342,19 @@
         "id": 5,
         "src": "/garelly/DTP- Digital talent program National Hackthon 2025 at Maliott Hotel-Kigali.jpg",
         "caption": "DTP National Hackathon 2025",
-        "description": "Participating in the Digital Talent Program National Hackathon 2025."
+        "description": "Participating in the Digital Talent Program National Hackathon 2025 August. I was part of a team that developed innovative solutions to real-world problems, about Digital tracking for health transparency. We presented our project to a panel of judges and win the competition 4th place."
       },
       {
         "id": 6,
         "src": "/garelly/DTP- Digital talent program National Hackthon 2025 at Maliott Hotel-Kigali (2).jpg",
         "caption": "DTP National Hackathon — team collaboration",
-        "description": "Collaborating with fellow participants during the DTP National Hackathon 2025."
+        "description": "Collaborating with fellow participants during the DTP National Hackathon 2025 August. This is a winner and onorable guest of event picture."
       },
       {
         "id": 7,
         "src": "/garelly/HIH-Huye Innovation Hub _ Compreting the 1 week of braimstorming about health Tech solutions (Kura care presentation).jpg",
-        "caption": "HIH Huye Innovation Hub — health tech brainstorming",
-        "description": "Participating in a week of brainstorming about health tech solutions."
+        "caption": "HIH Huye Innovation Hub. KureCare health tech brainstorming",
+        "description": "Participating in a week of brainstorming about health tech solutions. After the brainstorming, i presented my project KureCare, a health tech solution for improving healthcare access and delivery in Rwanda. 2025 May."
       }
     ],
     "work": [
@@ -362,13 +362,13 @@
         "id": 8,
         "src": "/images/Rwanda ICT Chamber Website redesign.jpg",
         "caption": "Rwanda ICT Chamber website redesign",
-        "description": "Redesigning the Rwanda ICT Chamber website."
+        "description": "Redesigning the Rwanda ICT Chamber website. I used WordPress to create a modern, user-friendly, and visually appealing website that reflects the organization's mission and values. The website includes features such as news updates, member resources and other. 2026"
       },
       {
         "id": 9,
         "src": "/images/Kainafresh E-commerce website.jpg",
         "caption": "Kainafresh e-commerce website",
-        "description": "Building an e-commerce platform for Kainafresh."
+        "description": "Building an e-commerce platform for Kainafresh. when i was a part of Rwanda ICT Chamber, I used WordPress to create a user-friendly and visually appealing website that allows customers to browse products, place orders, and make payments online. The website also includes features such as product categories, search functionality, and a shopping cart. 2026" 
       }
     ]
   },
