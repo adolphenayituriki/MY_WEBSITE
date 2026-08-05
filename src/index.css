@@ -56,6 +56,14 @@ button { font: inherit; }
 @media (min-width: 1200px) { .container { max-width: 1140px; } }
 @media (min-width: 1400px) { .container { max-width: 1320px; } }
 
+/* Full-width navbar & footer: content stretches to screen edges */
+.custom-nav > .container,
+footer > .container {
+  max-width: 100%;
+  padding-right: clamp(1rem, 4vw, 3rem);
+  padding-left: clamp(1rem, 4vw, 3rem);
+}
+
 /* Grid */
 .row {
   --bs-gutter-x: 1.5rem;
@@ -2789,24 +2797,28 @@ a.cv-contact-chip:hover {
   gap: 8px;
 }
 
-.skill-bar-group {
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 9px;
 }
 
-.skill-bar-item {
+.skill-list-item {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.skill-bar-header {
-  display: flex;
+  align-items: center;
   justify-content: space-between;
-  font-size: 0.78rem;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 0.82rem;
   font-weight: 500;
   color: var(--gray-700);
+  border-bottom: 1px dashed var(--gray-200);
+}
+
+.skill-list-item:last-child {
+  border-bottom: none;
 }
 
 .skill-level-label {
@@ -2818,35 +2830,7 @@ a.cv-contact-chip:hover {
   background: rgba(var(--primary-rgb), 0.1);
   padding: 2px 8px;
   border-radius: 10px;
-}
-
-.skill-bar-track {
-  height: 5px;
-  background: var(--gray-200);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.skill-bar-fill {
-  height: 100%;
-  border-radius: 3px;
-  background: var(--gradient-primary);
-  transition: width 1s ease;
-  width: 0;
-}
-
-.skill-bar-fill.animated {
-  animation: fillBar 1.2s ease forwards, barShimmer 3s linear infinite;
-}
-
-@keyframes barShimmer {
-  0% { filter: brightness(1); }
-  50% { filter: brightness(1.2); }
-  100% { filter: brightness(1); }
-}
-
-@keyframes fillBar {
-  from { width: 0; }
+  white-space: nowrap;
 }
 
 /* ─── CERTIFICATIONS ─── */
