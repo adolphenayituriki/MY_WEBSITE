@@ -1,6 +1,6 @@
 import defaults from '../data.json'
 
-const STORAGE_KEY = 'site_data'
+const STORAGE_KEY = 'site_data_v2'
 let publishedData = null
 
 export function setPublishedData(data) {
