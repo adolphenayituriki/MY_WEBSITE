@@ -182,12 +182,28 @@
       "title": "Programming Languages",
       "skills": [
         {
-          "name": "HTML5/CSS3",
-          "level": 95
+          "name": "React",
+          "level": 85
+        },
+        {
+          "name": "Node.js",
+          "level": 85
+        },
+        {
+          "name": "Express (Node.js Framework)",
+          "level": 85
         },
         {
           "name": "JavaScript",
           "level": 85
+        },
+        {
+          "name": "HTML5/CSS3",
+          "level": 95
+        },
+        {
+          "name": "Bootstrap",
+          "level": 90
         },
         {
           "name": "PHP & MySQL",
@@ -198,20 +214,8 @@
           "level": 65
         },
         {
-          "name": "React",
-          "level": 80
-        },
-        {
-          "name": "Node.js",
-          "level": 80
-        },
-        {
           "name": "MongoDB",
           "level": 65
-        },
-        {
-          "name": "Bootstrap",
-          "level": 90
         }
       ]
     },
@@ -224,7 +228,7 @@
         },
         {
           "name": "Photoshop",
-          "level": 70
+          "level": 80
         },
         {
           "name": "Canva",

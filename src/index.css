@@ -2809,6 +2809,17 @@ a.cv-contact-chip:hover {
   color: var(--gray-700);
 }
 
+.skill-level-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+  background: rgba(var(--primary-rgb), 0.1);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
 .skill-bar-track {
   height: 5px;
   background: var(--gray-200);

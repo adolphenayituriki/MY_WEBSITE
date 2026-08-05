@@ -26,7 +26,7 @@ export default function Contact() {
           <div className="contact-info">
             <h4>Get In Touch</h4>
             <p className="contact-info-text">
-              Whether you have a project, a question, or just want to say hi — I&rsquo;d love to hear from you.
+              Whether you have a project, a question, or just want to say hi, I&rsquo;d love to hear from you.
             </p>
             <ul className="contact-info-list">
               <li>

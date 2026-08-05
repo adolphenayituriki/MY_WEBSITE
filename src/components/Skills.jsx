@@ -7,6 +7,13 @@ const gradients = [
   'var(--gradient-primary)',
 ]
 
+const levelLabel = (level) => {
+  if (level >= 90) return 'Expert'
+  if (level >= 75) return 'Advanced'
+  if (level >= 60) return 'Intermediate'
+  return 'Basic'
+}
+
 export default function Skills() {
   const { skills: skillCategories } = getData()
   const [visible, setVisible] = useState(false)
@@ -40,7 +47,7 @@ export default function Skills() {
                         <div className="skill-bar-item" key={j}>
                           <div className="skill-bar-header">
                             <span>{skill.name}</span>
-                            <span>{skill.level}%</span>
+                            <span className="skill-level-label">{levelLabel(skill.level)}</span>
                           </div>
                           <div className="skill-bar-track">
                             <div
