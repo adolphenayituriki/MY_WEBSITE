@@ -227,6 +227,10 @@
           "level": 95
         },
         {
+          "name": "Postman (API Testing)",
+          "level": 80
+        },
+        {
           "name": "Photoshop",
           "level": 80
         },
@@ -245,10 +249,6 @@
         {
           "name": "CapCut / Filmora",
           "level": 75
-        },
-        {
-          "name": "Postman (API Testing)",
-          "level": 80
         }
       ]
     },
