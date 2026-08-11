@@ -339,6 +339,24 @@
     ],
     "events": [
       {
+        "id": 10,
+        "src": "/images/Frontiers Gen-AI Hackathon Rwanda 28 July 2026 banner.jpg",
+        "caption": "Frontiers Gen-AI Hackathon Rwanda",
+        "description": "Attending the Frontiers Gen-AI Hackathon Rwanda on 28 July 2026."
+      },
+      {
+        "id": 11,
+        "src": "/images/Frontiers Gen-AI Hackathon Rwanda 28 July 2026 Pictured image 1.JPG",
+        "caption": "Frontiers Gen-AI Hackathon — pictured moment",
+        "description": "A moment from the Frontiers Gen-AI Hackathon Rwanda, 28 July 2026."
+      },
+      {
+        "id": 12,
+        "src": "/images/Frontiers Gen-AI Hackathon Rwanda 28 July 2026 banner Pictured Image 2.jpg",
+        "caption": "Frontiers Gen-AI Hackathon — pictured moment",
+        "description": "A moment from the Frontiers Gen-AI Hackathon Rwanda, 28 July 2026."
+      },
+      {
         "id": 5,
         "src": "/garelly/DTP- Digital talent program National Hackthon 2025 at Maliott Hotel-Kigali.jpg",
         "caption": "DTP National Hackathon 2025",
