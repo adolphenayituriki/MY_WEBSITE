@@ -86,6 +86,18 @@
       "img": "/images/Kainafresh E-commerce website.jpg"
     },
     {
+      "id": 10,
+      "title": "DuFast EduAi: AI-powered assessment generator",
+      "desc": "Turn your course notes into Quiz, Test, Exam, and Homework-ready papers. Upload a course document and the AI writes a complete quiz, exam, exercise, or homework with an answer key and explanations — ready to print in seconds. Works with or without an AI key.",
+      "category": "Web Apps",
+      "tags": [
+        "AI-Powered",
+        "Assessment Generator"
+      ],
+      "liveUrl": "https://fast-eduai.vercel.app",
+      "img": "/images/DuFast EduAi AI-powered assessment generator.png"
+    },
+    {
       "id": 3,
       "title": "Rwanda ICT Chamber Website Redesign",
       "desc": "Rwanda ICT Chamber Website redesign project.",
